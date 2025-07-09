@@ -1,0 +1,1641 @@
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+[07/09 11:41:28][INFO] test_net.py: 168: Test with config:
+[07/09 11:41:28][INFO] test_net.py: 169: AUG:
+  AA_TYPE: rand-m5-n2-mstd0.25
+  COLOR_JITTER: 0.4
+  ENABLE: True
+  INTERPOLATION: bicubic
+  NUM_SAMPLE: 2
+  RE_COUNT: 1
+  RE_MODE: pixel
+  RE_PROB: 0.25
+  RE_SPLIT: False
+AVA:
+  ANNOTATION_DIR: /mnt/vol/gfsai-flash3-east/ai-group/users/haoqifan/ava/frame_list/
+  BGR: False
+  DETECTION_SCORE_THRESH: 0.9
+  EXCLUSION_FILE: ava_val_excluded_timestamps_v2.2.csv
+  FRAME_DIR: /mnt/fair-flash3-east/ava_trainval_frames.img/
+  FRAME_LIST_DIR: /mnt/vol/gfsai-flash3-east/ai-group/users/haoqifan/ava/frame_list/
+  FULL_TEST_ON_VAL: False
+  GROUNDTRUTH_FILE: ava_val_v2.2.csv
+  IMG_PROC_BACKEND: cv2
+  LABEL_MAP_FILE: ava_action_list_v2.2_for_activitynet_2019.pbtxt
+  TEST_FORCE_FLIP: False
+  TEST_LISTS: ['val.csv']
+  TEST_PREDICT_BOX_LISTS: ['ava_val_predicted_boxes.csv']
+  TRAIN_GT_BOX_LISTS: ['ava_train_v2.2.csv']
+  TRAIN_LISTS: ['train.csv']
+  TRAIN_PCA_JITTER_ONLY: True
+  TRAIN_PREDICT_BOX_LISTS: []
+  TRAIN_USE_COLOR_AUGMENTATION: False
+BENCHMARK:
+  LOG_PERIOD: 100
+  NUM_EPOCHS: 5
+  SHUFFLE: True
+BN:
+  NORM_TYPE: batchnorm
+  NUM_BATCHES_PRECISE: 200
+  NUM_SPLITS: 1
+  NUM_SYNC_DEVICES: 1
+  USE_PRECISE_STATS: False
+  WEIGHT_DECAY: 0.0
+DATA:
+  DECODING_BACKEND: decord
+  ENSEMBLE_METHOD: sum
+  IMAGE_TEMPLATE: {:05d}.jpg
+  INPUT_CHANNEL_NUM: [3]
+  INV_UNIFORM_SAMPLE: False
+  LABEL_PATH_TEMPLATE: somesomev1_rgb_{}_split.txt
+  MEAN: [0.45, 0.45, 0.45]
+  MULTI_LABEL: False
+  NUM_FRAMES: 16
+  PATH_LABEL_SEPARATOR:  
+  PATH_PREFIX: /home/yult/datasets/ucf101/videos/
+  PATH_TO_DATA_DIR: ./data_list/ucf101/split1
+  PATH_TO_PRELOAD_IMDB: 
+  RANDOM_FLIP: True
+  REVERSE_INPUT_CHANNEL: False
+  SAMPLING_RATE: 4
+  STD: [0.225, 0.225, 0.225]
+  TARGET_FPS: 30
+  TEST_CROP_SIZE: 224
+  TRAIN_CROP_SIZE: 224
+  TRAIN_JITTER_ASPECT_RELATIVE: [0.75, 1.3333]
+  TRAIN_JITTER_MOTION_SHIFT: False
+  TRAIN_JITTER_SCALES: [256, 320]
+  TRAIN_JITTER_SCALES_RELATIVE: [0.08, 1.0]
+  TRAIN_PCA_EIGVAL: [0.225, 0.224, 0.229]
+  TRAIN_PCA_EIGVEC: [[-0.5675, 0.7192, 0.4009], [-0.5808, -0.0045, -0.814], [-0.5836, -0.6948, 0.4203]]
+  USE_OFFSET_SAMPLING: True
+DATA_LOADER:
+  ENABLE_MULTI_THREAD_DECODE: False
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+DEMO:
+  BUFFER_SIZE: 0
+  CLIP_VIS_SIZE: 10
+  COMMON_CLASS_NAMES: ['watch (a person)', 'talk to (e.g., self, a person, a group)', 'listen to (a person)', 'touch (an object)', 'carry/hold (an object)', 'walk', 'sit', 'lie/sleep', 'bend/bow (at the waist)']
+  COMMON_CLASS_THRES: 0.7
+  DETECTRON2_CFG: COCO-Detection/faster_rcnn_R_50_FPN_3x.yaml
+  DETECTRON2_THRESH: 0.9
+  DETECTRON2_WEIGHTS: detectron2://COCO-Detection/faster_rcnn_R_50_FPN_3x/137849458/model_final_280758.pkl
+  DISPLAY_HEIGHT: 0
+  DISPLAY_WIDTH: 0
+  ENABLE: False
+  FPS: 30
+  GT_BOXES: 
+  INPUT_FORMAT: BGR
+  INPUT_VIDEO: 
+  LABEL_FILE_PATH: 
+  NUM_CLIPS_SKIP: 0
+  NUM_VIS_INSTANCES: 2
+  OUTPUT_FILE: 
+  OUTPUT_FPS: -1
+  PREDS_BOXES: 
+  SLOWMO: 1
+  STARTING_SECOND: 900
+  THREAD_ENABLE: False
+  UNCOMMON_CLASS_THRES: 0.3
+  VIS_MODE: thres
+  WEBCAM: -1
+DETECTION:
+  ALIGNED: True
+  ENABLE: False
+  ROI_XFORM_RESOLUTION: 7
+  SPATIAL_SCALE_FACTOR: 16
+DIST_BACKEND: nccl
+LOG_MODEL_INFO: True
+LOG_PERIOD: 10
+METASPIKFORMER:
+  ATTENTION_DROPOUT_RATE: 0
+  DEPTH: 8
+  DROPOUT_RATE: 0
+  DROP_DEPTH_RATE: 0.2
+  EMBED_DIM: [96, 192, 384, 480]
+  KD: False
+  MLP_RATIO: 4
+  NUM_HEADS: 8
+  PATCH_SIZE: 16
+  PRETRAIN_NAME: None
+  QKV_BIAS: False
+  QKV_SCALE: None
+  SR_RATIOS: 1
+MIXUP:
+  ALPHA: 0.8
+  CUTMIX_ALPHA: 1.0
+  ENABLE: True
+  LABEL_SMOOTH_VALUE: 0.1
+  PROB: 1.0
+  SWITCH_PROB: 0.5
+MODEL:
+  ARCH: uniformer2d_psnn_try
+  CHECKPOINT_NUM: [0, 0, 0, 0]
+  DROPCONNECT_RATE: 0.0
+  DROPOUT_RATE: 0.5
+  FC_INIT_STD: 0.01
+  HEAD_ACT: softmax
+  LOSS_FUNC: soft_cross_entropy
+  MODEL_NAME: Uniformer2d_psnn_try
+  MULTI_PATHWAY_ARCH: ['slowfast']
+  NUM_CLASSES: 101
+  SINGLE_PATHWAY_ARCH: ['2d', 'c2d', 'i3d', 'slow', 'x3d', 'mvit', 'uniformer', 'spikingformer', 'spikingformer_cml', 'sew_resnet', 'uniformer_snn', 'uniformer_psnn', 'uniformer2d_snn', 'uniformer2d_psnn', 'uniformer2d_psnn_act', 'uniformer2d_psnn_norm', 'uniformer2d_psnn_bn', 'uniformer2d_psnn_try', 'uniformer2d_psnn_tri', 'uniformer2d_prsnn', 'rsew_resnet', 'uniformer2d_psnn_convBnLif', 'uniformer2d_psnn_head', 'uniformer2d_psnn_lgf', 'uniformer2d_psnn_qkf', 'uniformer2d_psnn_convqkf', 'uniformer2d_if_lgf', 'uniformer2d_psnn_lgfT', 'qkformer', 'uniformer3d_psnn', 'uniformer3d_psnn_lgf', 'sglformer', 'metaspikformer']
+  USE_CHECKPOINT: False
+MULTIGRID:
+  BN_BASE_SIZE: 8
+  DEFAULT_B: 0
+  DEFAULT_S: 0
+  DEFAULT_T: 0
+  EPOCH_FACTOR: 1.5
+  EVAL_FREQ: 3
+  LONG_CYCLE: False
+  LONG_CYCLE_FACTORS: [(0.25, 0.7071067811865476), (0.5, 0.7071067811865476), (0.5, 1), (1, 1)]
+  LONG_CYCLE_SAMPLING_RATE: 0
+  SHORT_CYCLE: False
+  SHORT_CYCLE_FACTORS: [0.5, 0.7071067811865476]
+MVIT:
+  CLS_EMBED_ON: True
+  DEPTH: 16
+  DIM_MUL: []
+  DROPOUT_RATE: 0.0
+  DROPPATH_RATE: 0.1
+  EMBED_DIM: 96
+  HEAD_MUL: []
+  MLP_RATIO: 4.0
+  MODE: conv
+  NORM: layernorm
+  NORM_STEM: False
+  NUM_HEADS: 1
+  PATCH_2D: False
+  PATCH_KERNEL: [3, 7, 7]
+  PATCH_PADDING: [2, 4, 4]
+  PATCH_STRIDE: [2, 4, 4]
+  POOL_KVQ_KERNEL: None
+  POOL_KV_STRIDE: []
+  POOL_Q_STRIDE: []
+  QKV_BIAS: True
+  SEP_POS_EMBED: False
+  ZERO_DECAY_POS_CLS: True
+NONLOCAL:
+  GROUP: [[1], [1], [1], [1]]
+  INSTANTIATION: dot_product
+  LOCATION: [[[]], [[]], [[]], [[]]]
+  POOL: [[[1, 2, 2], [1, 2, 2]], [[1, 2, 2], [1, 2, 2]], [[1, 2, 2], [1, 2, 2]], [[1, 2, 2], [1, 2, 2]]]
+NUM_GPUS: 2
+NUM_SHARDS: 1
+OUTPUT_DIR: exp/svformer_ucf101_scratch
+QKFORMER:
+  ATTENTION_DROPOUT_RATE: 0
+  DEPTH: 8
+  DROPOUT_RATE: 0
+  DROP_DEPTH_RATE: 0.2
+  EMBED_DIM: 384
+  MLP_RATIO: 4
+  NUM_HEADS: 8
+  PATCH_SIZE: 16
+  PRETRAIN_NAME: None
+  QKV_BIAS: False
+  QKV_SCALE: None
+  SR_RATIOS: 1
+RESNET:
+  DEPTH: 50
+  INPLACE_RELU: True
+  NUM_BLOCK_TEMP_KERNEL: [[3], [4], [6], [3]]
+  NUM_GROUPS: 1
+  SPATIAL_DILATIONS: [[1], [1], [1], [1]]
+  SPATIAL_STRIDES: [[1], [2], [2], [2]]
+  STRIDE_1X1: False
+  TRANS_FUNC: bottleneck_transform
+  WIDTH_PER_GROUP: 64
+  ZERO_INIT_FINAL_BN: False
+RNG_SEED: 6666
+SEWRESNET:
+  CNF: ADD
+  LAYERS: [3, 4, 23, 3]
+  PRETRAIN_NAME: sew_resnet101_in1k
+SHARD_ID: 0
+SLOWFAST:
+  ALPHA: 8
+  BETA_INV: 8
+  FUSION_CONV_CHANNEL_RATIO: 2
+  FUSION_KERNEL_SZ: 5
+SOLVER:
+  BASE_LR: 0.006
+  BASE_LR_SCALE_NUM_SHARDS: False
+  CLIP_GRADIENT: 20
+  COSINE_AFTER_WARMUP: True
+  COSINE_END_LR: 1e-06
+  DAMPENING: 0.0
+  GAMMA: 0.1
+  LRS: []
+  LR_POLICY: cosine
+  MAX_EPOCH: 600
+  MOMENTUM: 0.9
+  NESTEROV: True
+  OPTIMIZING_METHOD: adamw
+  STEPS: []
+  STEP_SIZE: 1
+  WARMUP_EPOCHS: 30.0
+  WARMUP_FACTOR: 0.1
+  WARMUP_START_LR: 1e-06
+  WEIGHT_DECAY: 0.05
+  ZERO_WD_1D_PARAM: True
+SPIKINGFORMER:
+  ATTENTION_DROPOUT_RATE: 0
+  DEPTH: 8
+  DROPOUT_RATE: 0
+  DROP_DEPTH_RATE: 0.2
+  EMBED_DIM: 384
+  MLP_RATIO: 4
+  NUM_HEADS: 8
+  PATCH_SIZE: 16
+  PRETRAIN_NAME: None
+  QKV_BIAS: False
+  QKV_SCALE: None
+  SR_RATIOS: 1
+SPIKINGFORMER_CML:
+  ATTENTION_DROPOUT_RATE: 0
+  DEPTH: 8
+  DROPOUT_RATE: 0
+  DROP_DEPTH_RATE: 0.2
+  EMBED_DIM: 384
+  MLP_RATIO: 4
+  NUM_HEADS: 8
+  PATCH_SIZE: 16
+  PRETRAIN_NAME: None
+  QKV_BIAS: False
+  QKV_SCALE: None
+  SR_RATIOS: 1
+TENSORBOARD:
+  CATEGORIES_PATH: 
+  CLASS_NAMES_PATH: 
+  CONFUSION_MATRIX:
+    ENABLE: False
+    FIGSIZE: [8, 8]
+    SUBSET_PATH: 
+  ENABLE: True
+  HISTOGRAM:
+    ENABLE: False
+    FIGSIZE: [8, 8]
+    SUBSET_PATH: 
+    TOPK: 10
+  LOG_DIR: 
+  MODEL_VIS:
+    ACTIVATIONS: False
+    COLORMAP: Pastel2
+    ENABLE: False
+    GRAD_CAM:
+      COLORMAP: viridis
+      ENABLE: True
+      LAYER_LIST: []
+      USE_TRUE_LABEL: False
+    INPUT_VIDEO: False
+    LAYER_LIST: []
+    MODEL_WEIGHTS: False
+    TOPK_PREDS: 1
+  PREDICTIONS_PATH: 
+  WRONG_PRED_VIS:
+    ENABLE: False
+    SUBSET_PATH: 
+    TAG: Incorrectly classified videos.
+TEST:
+  BATCH_SIZE: 64
+  CHECKPOINT_FILE_PATH: exp/svformer_ucf101_scratch/checkpoints/best_Valtop1Err_checkpoint.pyth
+  CHECKPOINT_TYPE: pytorch
+  DATASET: kinetics
+  ENABLE: True
+  NUM_ENSEMBLE_VIEWS: 5
+  NUM_SPATIAL_CROPS: 3
+  SAVE_RESULTS_PATH: 
+TRAIN:
+  AUTO_RESUME: True
+  BATCH_SIZE: 6
+  CHECKPOINT_CLEAR_NAME_PATTERN: ()
+  CHECKPOINT_EPOCH_RESET: False
+  CHECKPOINT_FILE_PATH: 
+  CHECKPOINT_INFLATE: False
+  CHECKPOINT_PERIOD: 50
+  CHECKPOINT_TYPE: pytorch
+  DATASET: kinetics
+  ENABLE: False
+  EVAL_PERIOD: 5
+UNIFORMER:
+  ATTENTION_DROPOUT_RATE: 0
+  DEPTH: [1, 1, 3, 1]
+  DROPOUT_RATE: 0
+  DROP_DEPTH_RATE: 0.0
+  EMBED_DIM: [128, 256, 384, 512]
+  HEAD_DIM: 64
+  MLP_RATIO: 2
+  PRETRAIN_NAME: 
+  QKV_BIAS: True
+  QKV_SCALE: None
+  REPRESENTATION_SIZE: None
+  SPLIT: False
+  STAGE_TYPE: [0, 0, 1, 1]
+  STD: False
+  T: 1
+X3D:
+  BN_LIN5: False
+  BOTTLENECK_FACTOR: 1.0
+  CHANNELWISE_3x3x3: True
+  DEPTH_FACTOR: 1.0
+  DIM_C1: 12
+  DIM_C5: 2048
+  SCALE_RES2: False
+  WIDTH_FACTOR: 1.0
+[07/09 11:41:28][INFO] uniformer2d_psnn_try.py: 585: Use checkpoint: False
+[07/09 11:41:28][INFO] uniformer2d_psnn_try.py: 586: Checkpoint number: [0, 0, 0, 0]
+[07/09 11:41:31][INFO] misc.py: 191: Model:
+DistributedDataParallel(
+  (module): Uniformer2d_psnn_try(
+    (patch_embed1): SpeicalPatchEmbed(
+      (proj): Conv2d(3, 128, kernel_size=(6, 6), stride=(4, 4), padding=(1, 1), step_mode=m)
+      (norm): BatchNorm2d_eT(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (pos_drop): Dropout(p=0)
+    (blocks1): ModuleList(
+      (0): CBlock(
+        (act1): ParametricLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+          (surrogate_function): ATan(alpha=2.0, spiking=True)
+        )
+        (conv1): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+        (attn): Conv2d(128, 128, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=128, step_mode=m)
+        (conv2): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+        (drop_path): Identity()
+        (norm2): BatchNorm2d_eT(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): CMlp(
+          (act1): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc1): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+          (norm1): BatchNorm2d_eT(4096, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (act2): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc2): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+          (norm2): BatchNorm2d_eT(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (patch_embed2): PatchEmbed(
+      (in_lif): ParametricLIFNode(
+        v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+        (surrogate_function): ATan(alpha=2.0, spiking=True)
+      )
+      (proj): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), step_mode=m)
+      (norm): BatchNorm2d_eT(4096, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (blocks2): ModuleList(
+      (0): CBlock(
+        (act1): ParametricLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+          (surrogate_function): ATan(alpha=2.0, spiking=True)
+        )
+        (conv1): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+        (attn): Conv2d(256, 256, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=256, step_mode=m)
+        (conv2): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+        (drop_path): Identity()
+        (norm2): BatchNorm2d_eT(4096, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (mlp): CMlp(
+          (act1): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc1): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+          (norm1): BatchNorm2d_eT(8192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (act2): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc2): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+          (norm2): BatchNorm2d_eT(4096, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (patch_embed3): PatchEmbed(
+      (in_lif): ParametricLIFNode(
+        v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+        (surrogate_function): ATan(alpha=2.0, spiking=True)
+      )
+      (proj): Conv2d(256, 384, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), step_mode=m)
+      (norm): BatchNorm2d_eT(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (blocks3): ModuleList(
+      (0): SABlock(
+        (attn): Attention(
+          (in_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (norm1): BatchNorm1d_eT(18432, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (q_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (k_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (v_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (norm2): BatchNorm1d_eT(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): Identity()
+        (mlp): Mlp(
+          (act1): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc1): Linear(in_features=384, out_features=768, bias=True)
+          (norm1): BatchNorm1d_eT(12288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (act2): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc2): Linear(in_features=768, out_features=384, bias=True)
+          (norm2): BatchNorm1d_eT(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): SABlock(
+        (attn): Attention(
+          (in_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (norm1): BatchNorm1d_eT(18432, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (q_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (k_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (v_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (norm2): BatchNorm1d_eT(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): Identity()
+        (mlp): Mlp(
+          (act1): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc1): Linear(in_features=384, out_features=768, bias=True)
+          (norm1): BatchNorm1d_eT(12288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (act2): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc2): Linear(in_features=768, out_features=384, bias=True)
+          (norm2): BatchNorm1d_eT(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (2): SABlock(
+        (attn): Attention(
+          (in_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (qkv): Linear(in_features=384, out_features=1152, bias=True)
+          (norm1): BatchNorm1d_eT(18432, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (q_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (k_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (v_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj): Linear(in_features=384, out_features=384, bias=True)
+          (norm2): BatchNorm1d_eT(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): Identity()
+        (mlp): Mlp(
+          (act1): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc1): Linear(in_features=384, out_features=768, bias=True)
+          (norm1): BatchNorm1d_eT(12288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (act2): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc2): Linear(in_features=768, out_features=384, bias=True)
+          (norm2): BatchNorm1d_eT(6144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (patch_embed4): PatchEmbed(
+      (in_lif): ParametricLIFNode(
+        v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+        (surrogate_function): ATan(alpha=2.0, spiking=True)
+      )
+      (proj): Conv2d(384, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), step_mode=m)
+      (norm): BatchNorm2d_eT(8192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (blocks4): ModuleList(
+      (0): SABlock(
+        (attn): Attention(
+          (in_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (qkv): Linear(in_features=512, out_features=1536, bias=True)
+          (norm1): BatchNorm1d_eT(24576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (q_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (k_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (v_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj_lif): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (proj): Linear(in_features=512, out_features=512, bias=True)
+          (norm2): BatchNorm1d_eT(8192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (drop_path): Identity()
+        (mlp): Mlp(
+          (act1): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc1): Linear(in_features=512, out_features=1024, bias=True)
+          (norm1): BatchNorm1d_eT(16384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (act2): ParametricLIFNode(
+            v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+            (surrogate_function): ATan(alpha=2.0, spiking=True)
+          )
+          (fc2): Linear(in_features=1024, out_features=512, bias=True)
+          (norm2): BatchNorm1d_eT(8192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (lplif): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (lpDWConv): Conv2d(384, 384, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=384, step_mode=m)
+    (lpPWConv): Conv2d(384, 512, kernel_size=(1, 1), stride=(1, 1), step_mode=m)
+    (lpBN): BatchNorm2d_eT(8192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (lif_bf_head): ParametricLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, step_mode=m, backend=cupy, tau=2.0
+      (surrogate_function): ATan(alpha=2.0, spiking=True)
+    )
+    (dwconv_bf_head): Conv3d(1024, 1024, kernel_size=(16, 7, 7), stride=(1, 1, 1), groups=512)
+    (dwconv_bn): BatchNorm3d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (head): Linear(in_features=1024, out_features=101, bias=True)
+  )
+)
+[07/09 11:41:31][INFO] misc.py: 192: Params: 13,801,612
+[07/09 11:41:31][INFO] misc.py: 193: Mem: 0.10663175582885742 MB
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+[07/09 11:41:33][WARNING] jit_analysis.py: 499: Unsupported operator aten::mul encountered 35 time(s)
+[07/09 11:41:33][WARNING] jit_analysis.py: 499: Unsupported operator aten::sigmoid encountered 39 time(s)
+[07/09 11:41:33][WARNING] jit_analysis.py: 499: Unsupported operator prim::PythonOp.ParametricLIFNodeATGF encountered 39 time(s)
+[07/09 11:41:33][WARNING] jit_analysis.py: 499: Unsupported operator aten::add encountered 12 time(s)
+[07/09 11:41:33][WARNING] jit_analysis.py: 499: Unsupported operator aten::div encountered 16 time(s)
+[07/09 11:41:33][WARNING] jit_analysis.py: 511: The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+module.blocks1.0.act1.surrogate_function, module.blocks1.0.mlp.act1.surrogate_function, module.blocks1.0.mlp.act2.surrogate_function, module.blocks2.0.act1.surrogate_function, module.blocks2.0.mlp.act1.surrogate_function, module.blocks2.0.mlp.act2.surrogate_function, module.blocks3.0.attn.in_lif.surrogate_function, module.blocks3.0.attn.k_lif.surrogate_function, module.blocks3.0.attn.proj_lif.surrogate_function, module.blocks3.0.attn.q_lif.surrogate_function, module.blocks3.0.attn.v_lif.surrogate_function, module.blocks3.0.mlp.act1.surrogate_function, module.blocks3.0.mlp.act2.surrogate_function, module.blocks3.1.attn.in_lif.surrogate_function, module.blocks3.1.attn.k_lif.surrogate_function, module.blocks3.1.attn.proj_lif.surrogate_function, module.blocks3.1.attn.q_lif.surrogate_function, module.blocks3.1.attn.v_lif.surrogate_function, module.blocks3.1.mlp.act1.surrogate_function, module.blocks3.1.mlp.act2.surrogate_function, module.blocks3.2.attn.in_lif.surrogate_function, module.blocks3.2.attn.k_lif.surrogate_function, module.blocks3.2.attn.proj_lif.surrogate_function, module.blocks3.2.attn.q_lif.surrogate_function, module.blocks3.2.attn.v_lif.surrogate_function, module.blocks3.2.mlp.act1.surrogate_function, module.blocks3.2.mlp.act2.surrogate_function, module.blocks4.0.attn.in_lif.surrogate_function, module.blocks4.0.attn.k_lif.surrogate_function, module.blocks4.0.attn.proj_lif.surrogate_function, module.blocks4.0.attn.q_lif.surrogate_function, module.blocks4.0.attn.v_lif.surrogate_function, module.blocks4.0.mlp.act1.surrogate_function, module.blocks4.0.mlp.act2.surrogate_function, module.lif_bf_head.surrogate_function, module.lplif.surrogate_function, module.patch_embed2.in_lif.surrogate_function, module.patch_embed3.in_lif.surrogate_function, module.patch_embed4.in_lif.surrogate_function, module.pos_drop
+[07/09 11:41:33][INFO] misc.py: 195: Flops: 38.346109952 G
+[07/09 11:41:34][WARNING] jit_analysis.py: 499: Unsupported operator aten::mul encountered 35 time(s)
+[07/09 11:41:34][WARNING] jit_analysis.py: 499: Unsupported operator aten::batch_norm encountered 28 time(s)
+[07/09 11:41:34][WARNING] jit_analysis.py: 499: Unsupported operator aten::sigmoid encountered 39 time(s)
+[07/09 11:41:34][WARNING] jit_analysis.py: 499: Unsupported operator prim::PythonOp.ParametricLIFNodeATGF encountered 39 time(s)
+[07/09 11:41:34][WARNING] jit_analysis.py: 499: Unsupported operator aten::add encountered 12 time(s)
+[07/09 11:41:34][WARNING] jit_analysis.py: 499: Unsupported operator aten::div encountered 16 time(s)
+[07/09 11:41:34][WARNING] jit_analysis.py: 511: The following submodules of the model were never called during the trace of the graph. They may be unused, or they were accessed by direct calls to .forward() or via other python methods. In the latter case they will have zeros for statistics, though their statistics will still contribute to their parent calling module.
+module.blocks1.0.act1.surrogate_function, module.blocks1.0.mlp.act1.surrogate_function, module.blocks1.0.mlp.act2.surrogate_function, module.blocks2.0.act1.surrogate_function, module.blocks2.0.mlp.act1.surrogate_function, module.blocks2.0.mlp.act2.surrogate_function, module.blocks3.0.attn.in_lif.surrogate_function, module.blocks3.0.attn.k_lif.surrogate_function, module.blocks3.0.attn.proj_lif.surrogate_function, module.blocks3.0.attn.q_lif.surrogate_function, module.blocks3.0.attn.v_lif.surrogate_function, module.blocks3.0.mlp.act1.surrogate_function, module.blocks3.0.mlp.act2.surrogate_function, module.blocks3.1.attn.in_lif.surrogate_function, module.blocks3.1.attn.k_lif.surrogate_function, module.blocks3.1.attn.proj_lif.surrogate_function, module.blocks3.1.attn.q_lif.surrogate_function, module.blocks3.1.attn.v_lif.surrogate_function, module.blocks3.1.mlp.act1.surrogate_function, module.blocks3.1.mlp.act2.surrogate_function, module.blocks3.2.attn.in_lif.surrogate_function, module.blocks3.2.attn.k_lif.surrogate_function, module.blocks3.2.attn.proj_lif.surrogate_function, module.blocks3.2.attn.q_lif.surrogate_function, module.blocks3.2.attn.v_lif.surrogate_function, module.blocks3.2.mlp.act1.surrogate_function, module.blocks3.2.mlp.act2.surrogate_function, module.blocks4.0.attn.in_lif.surrogate_function, module.blocks4.0.attn.k_lif.surrogate_function, module.blocks4.0.attn.proj_lif.surrogate_function, module.blocks4.0.attn.q_lif.surrogate_function, module.blocks4.0.attn.v_lif.surrogate_function, module.blocks4.0.mlp.act1.surrogate_function, module.blocks4.0.mlp.act2.surrogate_function, module.lif_bf_head.surrogate_function, module.lplif.surrogate_function, module.patch_embed2.in_lif.surrogate_function, module.patch_embed3.in_lif.surrogate_function, module.patch_embed4.in_lif.surrogate_function, module.pos_drop
+[07/09 11:41:34][INFO] misc.py: 203: Activations: 103.562341 M
+[07/09 11:41:34][INFO] misc.py: 210: nvidia-smi
+Wed Jul  9 11:41:34 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.120                Driver Version: 550.120        CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Quadro RTX 6000                Off |   00000000:18:00.0  On |                  Off |
+| 33%   42C    P2             70W /  260W |    3661MiB /  24576MiB |      8%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  Quadro RTX 6000                Off |   00000000:D8:00.0 Off |                  Off |
+| 33%   44C    P2             65W /  260W |    1015MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+[07/09 11:41:34][INFO] checkpoint.py: 213: Loading network weights from exp/svformer_ucf101_scratch/checkpoints/best_Valtop1Err_checkpoint.pyth.
+[07/09 11:41:34][INFO] kinetics.py:  76: Constructing Kinetics test...
+[07/09 11:41:34][INFO] kinetics.py: 123: Constructing kinetics dataloader (size: 56745) from ./data_list/ucf101/split1/test.csv
+[07/09 11:41:34][INFO] test_net.py: 180: Testing model for 887 iterations
+[07/09 11:41:34][INFO] tensorboard_vis.py:  54: To see logged results in Tensorboard, please launch using the command             `tensorboard  --port=<port-number> --logdir exp/svformer_ucf101_scratch/runs-kinetics`
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/spikingjelly-0.0.0.0.14-py3.8.egg/spikingjelly/activation_based/cuda_utils.py:170: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+/opt/conda/lib/python3.8/site-packages/spikingjelly-0.0.0.0.14-py3.8.egg/spikingjelly/activation_based/cuda_utils.py:170: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').
+[07/09 11:42:03][INFO] logging.py:  99: json_stats: {"cur_iter": "1", "eta": "7:08:42", "split": "test_iter", "time_diff": 28.99957}
+[07/09 11:42:05][INFO] logging.py:  99: json_stats: {"cur_iter": "2", "eta": "0:22:24", "split": "test_iter", "time_diff": 1.51763}
+[07/09 11:42:05][INFO] logging.py:  99: json_stats: {"cur_iter": "3", "eta": "0:09:13", "split": "test_iter", "time_diff": 0.62525}
+[07/09 11:42:06][INFO] logging.py:  99: json_stats: {"cur_iter": "4", "eta": "0:09:13", "split": "test_iter", "time_diff": 0.62593}
+[07/09 11:42:07][INFO] logging.py:  99: json_stats: {"cur_iter": "5", "eta": "0:09:11", "split": "test_iter", "time_diff": 0.62481}
+[07/09 11:42:07][INFO] logging.py:  99: json_stats: {"cur_iter": "6", "eta": "0:09:11", "split": "test_iter", "time_diff": 0.62532}
+[07/09 11:42:08][INFO] logging.py:  99: json_stats: {"cur_iter": "7", "eta": "0:09:11", "split": "test_iter", "time_diff": 0.62588}
+[07/09 11:42:09][INFO] logging.py:  99: json_stats: {"cur_iter": "8", "eta": "0:09:10", "split": "test_iter", "time_diff": 0.62569}
+[07/09 11:42:09][INFO] logging.py:  99: json_stats: {"cur_iter": "9", "eta": "0:09:10", "split": "test_iter", "time_diff": 0.62642}
+[07/09 11:42:10][INFO] logging.py:  99: json_stats: {"cur_iter": "10", "eta": "0:09:12", "split": "test_iter", "time_diff": 0.62951}
+[07/09 11:42:11][INFO] logging.py:  99: json_stats: {"cur_iter": "11", "eta": "0:09:08", "split": "test_iter", "time_diff": 0.62564}
+[07/09 11:42:11][INFO] logging.py:  99: json_stats: {"cur_iter": "12", "eta": "0:09:09", "split": "test_iter", "time_diff": 0.62766}
+[07/09 11:42:12][INFO] logging.py:  99: json_stats: {"cur_iter": "13", "eta": "0:09:07", "split": "test_iter", "time_diff": 0.62517}
+[07/09 11:42:13][INFO] logging.py:  99: json_stats: {"cur_iter": "14", "eta": "0:09:30", "split": "test_iter", "time_diff": 0.65314}
+[07/09 11:42:14][INFO] logging.py:  99: json_stats: {"cur_iter": "15", "eta": "0:09:06", "split": "test_iter", "time_diff": 0.62619}
+[07/09 11:42:14][INFO] logging.py:  99: json_stats: {"cur_iter": "16", "eta": "0:09:12", "split": "test_iter", "time_diff": 0.63361}
+[07/09 11:42:15][INFO] logging.py:  99: json_stats: {"cur_iter": "17", "eta": "0:09:06", "split": "test_iter", "time_diff": 0.62743}
+[07/09 11:42:16][INFO] logging.py:  99: json_stats: {"cur_iter": "18", "eta": "0:09:11", "split": "test_iter", "time_diff": 0.63393}
+[07/09 11:42:16][INFO] logging.py:  99: json_stats: {"cur_iter": "19", "eta": "0:09:06", "split": "test_iter", "time_diff": 0.62876}
+[07/09 11:42:17][INFO] logging.py:  99: json_stats: {"cur_iter": "20", "eta": "0:09:05", "split": "test_iter", "time_diff": 0.62848}
+[07/09 11:42:18][INFO] logging.py:  99: json_stats: {"cur_iter": "21", "eta": "0:09:07", "split": "test_iter", "time_diff": 0.63186}
+[07/09 11:42:18][INFO] logging.py:  99: json_stats: {"cur_iter": "22", "eta": "0:09:07", "split": "test_iter", "time_diff": 0.63235}
+[07/09 11:42:19][INFO] logging.py:  99: json_stats: {"cur_iter": "23", "eta": "0:09:12", "split": "test_iter", "time_diff": 0.63842}
+[07/09 11:42:20][INFO] logging.py:  99: json_stats: {"cur_iter": "24", "eta": "0:09:15", "split": "test_iter", "time_diff": 0.64287}
+[07/09 11:42:20][INFO] logging.py:  99: json_stats: {"cur_iter": "25", "eta": "0:09:06", "split": "test_iter", "time_diff": 0.63347}
+[07/09 11:42:21][INFO] logging.py:  99: json_stats: {"cur_iter": "26", "eta": "0:09:00", "split": "test_iter", "time_diff": 0.62715}
+[07/09 11:42:22][INFO] logging.py:  99: json_stats: {"cur_iter": "27", "eta": "0:09:07", "split": "test_iter", "time_diff": 0.63604}
+[07/09 11:42:22][INFO] logging.py:  99: json_stats: {"cur_iter": "28", "eta": "0:09:01", "split": "test_iter", "time_diff": 0.62992}
+[07/09 11:42:23][INFO] logging.py:  99: json_stats: {"cur_iter": "29", "eta": "0:09:01", "split": "test_iter", "time_diff": 0.63053}
+[07/09 11:42:24][INFO] logging.py:  99: json_stats: {"cur_iter": "30", "eta": "0:09:07", "split": "test_iter", "time_diff": 0.63757}
+[07/09 11:42:25][INFO] logging.py:  99: json_stats: {"cur_iter": "31", "eta": "0:08:59", "split": "test_iter", "time_diff": 0.62978}
+[07/09 11:42:25][INFO] logging.py:  99: json_stats: {"cur_iter": "32", "eta": "0:09:07", "split": "test_iter", "time_diff": 0.63960}
+[07/09 11:42:26][INFO] logging.py:  99: json_stats: {"cur_iter": "33", "eta": "0:08:59", "split": "test_iter", "time_diff": 0.63096}
+[07/09 11:42:27][INFO] logging.py:  99: json_stats: {"cur_iter": "34", "eta": "0:08:56", "split": "test_iter", "time_diff": 0.62833}
+[07/09 11:42:27][INFO] logging.py:  99: json_stats: {"cur_iter": "35", "eta": "0:09:08", "split": "test_iter", "time_diff": 0.64247}
+[07/09 11:42:28][INFO] logging.py:  99: json_stats: {"cur_iter": "36", "eta": "0:08:57", "split": "test_iter", "time_diff": 0.63126}
+[07/09 11:42:29][INFO] logging.py:  99: json_stats: {"cur_iter": "37", "eta": "0:09:21", "split": "test_iter", "time_diff": 0.65979}
+[07/09 11:42:29][INFO] logging.py:  99: json_stats: {"cur_iter": "38", "eta": "0:08:55", "split": "test_iter", "time_diff": 0.63046}
+[07/09 11:42:30][INFO] logging.py:  99: json_stats: {"cur_iter": "39", "eta": "0:08:55", "split": "test_iter", "time_diff": 0.63043}
+[07/09 11:42:31][INFO] logging.py:  99: json_stats: {"cur_iter": "40", "eta": "0:08:58", "split": "test_iter", "time_diff": 0.63504}
+[07/09 11:42:31][INFO] logging.py:  99: json_stats: {"cur_iter": "41", "eta": "0:08:53", "split": "test_iter", "time_diff": 0.62967}
+[07/09 11:42:32][INFO] logging.py:  99: json_stats: {"cur_iter": "42", "eta": "0:08:54", "split": "test_iter", "time_diff": 0.63147}
+[07/09 11:42:33][INFO] logging.py:  99: json_stats: {"cur_iter": "43", "eta": "0:09:31", "split": "test_iter", "time_diff": 0.67654}
+[07/09 11:42:34][INFO] logging.py:  99: json_stats: {"cur_iter": "44", "eta": "0:08:59", "split": "test_iter", "time_diff": 0.63871}
+[07/09 11:42:34][INFO] logging.py:  99: json_stats: {"cur_iter": "45", "eta": "0:08:51", "split": "test_iter", "time_diff": 0.63102}
+[07/09 11:42:35][INFO] logging.py:  99: json_stats: {"cur_iter": "46", "eta": "0:08:50", "split": "test_iter", "time_diff": 0.63003}
+[07/09 11:42:36][INFO] logging.py:  99: json_stats: {"cur_iter": "47", "eta": "0:08:52", "split": "test_iter", "time_diff": 0.63326}
+[07/09 11:42:36][INFO] logging.py:  99: json_stats: {"cur_iter": "48", "eta": "0:08:50", "split": "test_iter", "time_diff": 0.63151}
+[07/09 11:42:37][INFO] logging.py:  99: json_stats: {"cur_iter": "49", "eta": "0:08:56", "split": "test_iter", "time_diff": 0.63936}
+[07/09 11:42:38][INFO] logging.py:  99: json_stats: {"cur_iter": "50", "eta": "0:08:48", "split": "test_iter", "time_diff": 0.63091}
+[07/09 11:42:38][INFO] logging.py:  99: json_stats: {"cur_iter": "51", "eta": "0:08:48", "split": "test_iter", "time_diff": 0.63095}
+[07/09 11:42:39][INFO] logging.py:  99: json_stats: {"cur_iter": "52", "eta": "0:08:51", "split": "test_iter", "time_diff": 0.63625}
+[07/09 11:42:40][INFO] logging.py:  99: json_stats: {"cur_iter": "53", "eta": "0:08:47", "split": "test_iter", "time_diff": 0.63210}
+[07/09 11:42:41][INFO] logging.py:  99: json_stats: {"cur_iter": "54", "eta": "0:08:48", "split": "test_iter", "time_diff": 0.63365}
+[07/09 11:42:41][INFO] logging.py:  99: json_stats: {"cur_iter": "55", "eta": "0:08:45", "split": "test_iter", "time_diff": 0.63088}
+[07/09 11:42:42][INFO] logging.py:  99: json_stats: {"cur_iter": "56", "eta": "0:08:58", "split": "test_iter", "time_diff": 0.64761}
+[07/09 11:42:43][INFO] logging.py:  99: json_stats: {"cur_iter": "57", "eta": "0:08:44", "split": "test_iter", "time_diff": 0.63144}
+[07/09 11:42:43][INFO] logging.py:  99: json_stats: {"cur_iter": "58", "eta": "0:08:46", "split": "test_iter", "time_diff": 0.63457}
+[07/09 11:42:44][INFO] logging.py:  99: json_stats: {"cur_iter": "59", "eta": "0:08:46", "split": "test_iter", "time_diff": 0.63546}
+[07/09 11:42:45][INFO] logging.py:  99: json_stats: {"cur_iter": "60", "eta": "0:09:14", "split": "test_iter", "time_diff": 0.66959}
+[07/09 11:42:45][INFO] logging.py:  99: json_stats: {"cur_iter": "61", "eta": "0:09:12", "split": "test_iter", "time_diff": 0.66827}
+[07/09 11:42:46][INFO] logging.py:  99: json_stats: {"cur_iter": "62", "eta": "0:10:41", "split": "test_iter", "time_diff": 0.77718}
+[07/09 11:42:47][INFO] logging.py:  99: json_stats: {"cur_iter": "63", "eta": "0:08:42", "split": "test_iter", "time_diff": 0.63321}
+[07/09 11:42:48][INFO] logging.py:  99: json_stats: {"cur_iter": "64", "eta": "0:08:42", "split": "test_iter", "time_diff": 0.63358}
+[07/09 11:42:48][INFO] logging.py:  99: json_stats: {"cur_iter": "65", "eta": "0:08:40", "split": "test_iter", "time_diff": 0.63295}
+[07/09 11:42:49][INFO] logging.py:  99: json_stats: {"cur_iter": "66", "eta": "0:08:42", "split": "test_iter", "time_diff": 0.63529}
+[07/09 11:42:50][INFO] logging.py:  99: json_stats: {"cur_iter": "67", "eta": "0:08:40", "split": "test_iter", "time_diff": 0.63382}
+[07/09 11:42:50][INFO] logging.py:  99: json_stats: {"cur_iter": "68", "eta": "0:08:39", "split": "test_iter", "time_diff": 0.63408}
+[07/09 11:42:51][INFO] logging.py:  99: json_stats: {"cur_iter": "69", "eta": "0:08:41", "split": "test_iter", "time_diff": 0.63698}
+[07/09 11:42:52][INFO] logging.py:  99: json_stats: {"cur_iter": "70", "eta": "0:08:38", "split": "test_iter", "time_diff": 0.63335}
+[07/09 11:42:53][INFO] logging.py:  99: json_stats: {"cur_iter": "71", "eta": "0:08:37", "split": "test_iter", "time_diff": 0.63284}
+[07/09 11:42:53][INFO] logging.py:  99: json_stats: {"cur_iter": "72", "eta": "0:09:37", "split": "test_iter", "time_diff": 0.70743}
+[07/09 11:42:54][INFO] logging.py:  99: json_stats: {"cur_iter": "73", "eta": "0:08:36", "split": "test_iter", "time_diff": 0.63390}
+[07/09 11:42:55][INFO] logging.py:  99: json_stats: {"cur_iter": "74", "eta": "0:08:36", "split": "test_iter", "time_diff": 0.63423}
+[07/09 11:42:55][INFO] logging.py:  99: json_stats: {"cur_iter": "75", "eta": "0:08:45", "split": "test_iter", "time_diff": 0.64666}
+[07/09 11:42:56][INFO] logging.py:  99: json_stats: {"cur_iter": "76", "eta": "0:08:35", "split": "test_iter", "time_diff": 0.63432}
+[07/09 11:42:57][INFO] logging.py:  99: json_stats: {"cur_iter": "77", "eta": "0:08:33", "split": "test_iter", "time_diff": 0.63347}
+[07/09 11:42:57][INFO] logging.py:  99: json_stats: {"cur_iter": "78", "eta": "0:08:53", "split": "test_iter", "time_diff": 0.65881}
+[07/09 11:42:58][INFO] logging.py:  99: json_stats: {"cur_iter": "79", "eta": "0:09:06", "split": "test_iter", "time_diff": 0.67514}
+[07/09 11:42:59][INFO] logging.py:  99: json_stats: {"cur_iter": "80", "eta": "0:08:44", "split": "test_iter", "time_diff": 0.64895}
+[07/09 11:43:00][INFO] logging.py:  99: json_stats: {"cur_iter": "81", "eta": "0:08:48", "split": "test_iter", "time_diff": 0.65435}
+[07/09 11:43:00][INFO] logging.py:  99: json_stats: {"cur_iter": "82", "eta": "0:09:09", "split": "test_iter", "time_diff": 0.68156}
+[07/09 11:43:01][INFO] logging.py:  99: json_stats: {"cur_iter": "83", "eta": "0:08:51", "split": "test_iter", "time_diff": 0.66070}
+[07/09 11:43:02][INFO] logging.py:  99: json_stats: {"cur_iter": "84", "eta": "0:08:31", "split": "test_iter", "time_diff": 0.63574}
+[07/09 11:43:02][INFO] logging.py:  99: json_stats: {"cur_iter": "85", "eta": "0:08:30", "split": "test_iter", "time_diff": 0.63526}
+[07/09 11:43:03][INFO] logging.py:  99: json_stats: {"cur_iter": "86", "eta": "0:08:29", "split": "test_iter", "time_diff": 0.63530}
+[07/09 11:43:04][INFO] logging.py:  99: json_stats: {"cur_iter": "87", "eta": "0:08:27", "split": "test_iter", "time_diff": 0.63381}
+[07/09 11:43:04][INFO] logging.py:  99: json_stats: {"cur_iter": "88", "eta": "0:08:28", "split": "test_iter", "time_diff": 0.63506}
+[07/09 11:43:05][INFO] logging.py:  99: json_stats: {"cur_iter": "89", "eta": "0:08:27", "split": "test_iter", "time_diff": 0.63532}
+[07/09 11:43:06][INFO] logging.py:  99: json_stats: {"cur_iter": "90", "eta": "0:08:45", "split": "test_iter", "time_diff": 0.65868}
+[07/09 11:43:07][INFO] logging.py:  99: json_stats: {"cur_iter": "91", "eta": "0:08:26", "split": "test_iter", "time_diff": 0.63538}
+[07/09 11:43:07][INFO] logging.py:  99: json_stats: {"cur_iter": "92", "eta": "0:08:36", "split": "test_iter", "time_diff": 0.64935}
+[07/09 11:43:08][INFO] logging.py:  99: json_stats: {"cur_iter": "93", "eta": "0:08:59", "split": "test_iter", "time_diff": 0.67827}
+[07/09 11:43:09][INFO] logging.py:  99: json_stats: {"cur_iter": "94", "eta": "0:08:37", "split": "test_iter", "time_diff": 0.65169}
+[07/09 11:43:09][INFO] logging.py:  99: json_stats: {"cur_iter": "95", "eta": "0:10:13", "split": "test_iter", "time_diff": 0.77411}
+[07/09 11:43:10][INFO] logging.py:  99: json_stats: {"cur_iter": "96", "eta": "0:08:24", "split": "test_iter", "time_diff": 0.63719}
+[07/09 11:43:11][INFO] logging.py:  99: json_stats: {"cur_iter": "97", "eta": "0:08:28", "split": "test_iter", "time_diff": 0.64321}
+[07/09 11:43:12][INFO] logging.py:  99: json_stats: {"cur_iter": "98", "eta": "0:09:36", "split": "test_iter", "time_diff": 0.72969}
+[07/09 11:43:12][INFO] logging.py:  99: json_stats: {"cur_iter": "99", "eta": "0:08:58", "split": "test_iter", "time_diff": 0.68210}
+[07/09 11:43:13][INFO] logging.py:  99: json_stats: {"cur_iter": "100", "eta": "0:08:31", "split": "test_iter", "time_diff": 0.64915}
+[07/09 11:43:14][INFO] logging.py:  99: json_stats: {"cur_iter": "101", "eta": "0:08:23", "split": "test_iter", "time_diff": 0.64002}
+[07/09 11:43:14][INFO] logging.py:  99: json_stats: {"cur_iter": "102", "eta": "0:08:20", "split": "test_iter", "time_diff": 0.63679}
+[07/09 11:43:15][INFO] logging.py:  99: json_stats: {"cur_iter": "103", "eta": "0:08:20", "split": "test_iter", "time_diff": 0.63703}
+[07/09 11:43:16][INFO] logging.py:  99: json_stats: {"cur_iter": "104", "eta": "0:08:24", "split": "test_iter", "time_diff": 0.64324}
+[07/09 11:43:17][INFO] logging.py:  99: json_stats: {"cur_iter": "105", "eta": "0:08:42", "split": "test_iter", "time_diff": 0.66671}
+[07/09 11:43:17][INFO] logging.py:  99: json_stats: {"cur_iter": "106", "eta": "0:08:21", "split": "test_iter", "time_diff": 0.64084}
+[07/09 11:43:18][INFO] logging.py:  99: json_stats: {"cur_iter": "107", "eta": "0:08:47", "split": "test_iter", "time_diff": 0.67581}
+[07/09 11:43:19][INFO] logging.py:  99: json_stats: {"cur_iter": "108", "eta": "0:08:20", "split": "test_iter", "time_diff": 0.64214}
+[07/09 11:43:19][INFO] logging.py:  99: json_stats: {"cur_iter": "109", "eta": "0:08:15", "split": "test_iter", "time_diff": 0.63598}
+[07/09 11:43:20][INFO] logging.py:  99: json_stats: {"cur_iter": "110", "eta": "0:08:17", "split": "test_iter", "time_diff": 0.63926}
+[07/09 11:43:21][INFO] logging.py:  99: json_stats: {"cur_iter": "111", "eta": "0:08:14", "split": "test_iter", "time_diff": 0.63670}
+[07/09 11:43:21][INFO] logging.py:  99: json_stats: {"cur_iter": "112", "eta": "0:08:43", "split": "test_iter", "time_diff": 0.67406}
+[07/09 11:43:22][INFO] logging.py:  99: json_stats: {"cur_iter": "113", "eta": "0:08:26", "split": "test_iter", "time_diff": 0.65410}
+[07/09 11:43:23][INFO] logging.py:  99: json_stats: {"cur_iter": "114", "eta": "0:08:13", "split": "test_iter", "time_diff": 0.63739}
+[07/09 11:43:24][INFO] logging.py:  99: json_stats: {"cur_iter": "115", "eta": "0:08:27", "split": "test_iter", "time_diff": 0.65715}
+[07/09 11:43:24][INFO] logging.py:  99: json_stats: {"cur_iter": "116", "eta": "0:09:07", "split": "test_iter", "time_diff": 0.70884}
+[07/09 11:43:25][INFO] logging.py:  99: json_stats: {"cur_iter": "117", "eta": "0:08:11", "split": "test_iter", "time_diff": 0.63730}
+[07/09 11:43:26][INFO] logging.py:  99: json_stats: {"cur_iter": "118", "eta": "0:08:10", "split": "test_iter", "time_diff": 0.63678}
+[07/09 11:43:26][INFO] logging.py:  99: json_stats: {"cur_iter": "119", "eta": "0:08:10", "split": "test_iter", "time_diff": 0.63812}
+[07/09 11:43:27][INFO] logging.py:  99: json_stats: {"cur_iter": "120", "eta": "0:08:10", "split": "test_iter", "time_diff": 0.63822}
+[07/09 11:43:28][INFO] logging.py:  99: json_stats: {"cur_iter": "121", "eta": "0:08:08", "split": "test_iter", "time_diff": 0.63694}
+[07/09 11:43:28][INFO] logging.py:  99: json_stats: {"cur_iter": "122", "eta": "0:08:10", "split": "test_iter", "time_diff": 0.63992}
+[07/09 11:43:29][INFO] logging.py:  99: json_stats: {"cur_iter": "123", "eta": "0:08:07", "split": "test_iter", "time_diff": 0.63685}
+[07/09 11:43:30][INFO] logging.py:  99: json_stats: {"cur_iter": "124", "eta": "0:08:07", "split": "test_iter", "time_diff": 0.63828}
+[07/09 11:43:31][INFO] logging.py:  99: json_stats: {"cur_iter": "125", "eta": "0:08:05", "split": "test_iter", "time_diff": 0.63663}
+[07/09 11:43:31][INFO] logging.py:  99: json_stats: {"cur_iter": "126", "eta": "0:08:05", "split": "test_iter", "time_diff": 0.63715}
+[07/09 11:43:32][INFO] logging.py:  99: json_stats: {"cur_iter": "127", "eta": "0:08:05", "split": "test_iter", "time_diff": 0.63834}
+[07/09 11:43:33][INFO] logging.py:  99: json_stats: {"cur_iter": "128", "eta": "0:08:05", "split": "test_iter", "time_diff": 0.63853}
+[07/09 11:43:33][INFO] logging.py:  99: json_stats: {"cur_iter": "129", "eta": "0:08:40", "split": "test_iter", "time_diff": 0.68583}
+[07/09 11:43:34][INFO] logging.py:  99: json_stats: {"cur_iter": "130", "eta": "0:08:04", "split": "test_iter", "time_diff": 0.63878}
+[07/09 11:43:35][INFO] logging.py:  99: json_stats: {"cur_iter": "131", "eta": "0:08:02", "split": "test_iter", "time_diff": 0.63714}
+[07/09 11:43:35][INFO] logging.py:  99: json_stats: {"cur_iter": "132", "eta": "0:08:02", "split": "test_iter", "time_diff": 0.63850}
+[07/09 11:43:36][INFO] logging.py:  99: json_stats: {"cur_iter": "133", "eta": "0:08:01", "split": "test_iter", "time_diff": 0.63742}
+[07/09 11:43:37][INFO] logging.py:  99: json_stats: {"cur_iter": "134", "eta": "0:08:04", "split": "test_iter", "time_diff": 0.64311}
+[07/09 11:43:38][INFO] logging.py:  99: json_stats: {"cur_iter": "135", "eta": "0:08:12", "split": "test_iter", "time_diff": 0.65443}
+[07/09 11:43:38][INFO] logging.py:  99: json_stats: {"cur_iter": "136", "eta": "0:08:26", "split": "test_iter", "time_diff": 0.67339}
+[07/09 11:43:39][INFO] logging.py:  99: json_stats: {"cur_iter": "137", "eta": "0:08:00", "split": "test_iter", "time_diff": 0.64027}
+[07/09 11:43:40][INFO] logging.py:  99: json_stats: {"cur_iter": "138", "eta": "0:07:57", "split": "test_iter", "time_diff": 0.63725}
+[07/09 11:43:40][INFO] logging.py:  99: json_stats: {"cur_iter": "139", "eta": "0:07:57", "split": "test_iter", "time_diff": 0.63765}
+[07/09 11:43:41][INFO] logging.py:  99: json_stats: {"cur_iter": "140", "eta": "0:08:00", "split": "test_iter", "time_diff": 0.64261}
+[07/09 11:43:42][INFO] logging.py:  99: json_stats: {"cur_iter": "141", "eta": "0:07:59", "split": "test_iter", "time_diff": 0.64166}
+[07/09 11:43:42][INFO] logging.py:  99: json_stats: {"cur_iter": "142", "eta": "0:07:55", "split": "test_iter", "time_diff": 0.63794}
+[07/09 11:43:43][INFO] logging.py:  99: json_stats: {"cur_iter": "143", "eta": "0:07:59", "split": "test_iter", "time_diff": 0.64330}
+[07/09 11:43:44][INFO] logging.py:  99: json_stats: {"cur_iter": "144", "eta": "0:07:55", "split": "test_iter", "time_diff": 0.63885}
+[07/09 11:43:45][INFO] logging.py:  99: json_stats: {"cur_iter": "145", "eta": "0:07:53", "split": "test_iter", "time_diff": 0.63672}
+[07/09 11:43:45][INFO] logging.py:  99: json_stats: {"cur_iter": "146", "eta": "0:07:53", "split": "test_iter", "time_diff": 0.63806}
+[07/09 11:43:46][INFO] logging.py:  99: json_stats: {"cur_iter": "147", "eta": "0:07:54", "split": "test_iter", "time_diff": 0.64013}
+[07/09 11:43:47][INFO] logging.py:  99: json_stats: {"cur_iter": "148", "eta": "0:07:52", "split": "test_iter", "time_diff": 0.63894}
+[07/09 11:43:47][INFO] logging.py:  99: json_stats: {"cur_iter": "149", "eta": "0:07:50", "split": "test_iter", "time_diff": 0.63725}
+[07/09 11:43:48][INFO] logging.py:  99: json_stats: {"cur_iter": "150", "eta": "0:07:51", "split": "test_iter", "time_diff": 0.63898}
+[07/09 11:43:49][INFO] logging.py:  99: json_stats: {"cur_iter": "151", "eta": "0:08:03", "split": "test_iter", "time_diff": 0.65549}
+[07/09 11:43:49][INFO] logging.py:  99: json_stats: {"cur_iter": "152", "eta": "0:08:11", "split": "test_iter", "time_diff": 0.66729}
+[07/09 11:43:50][INFO] logging.py:  99: json_stats: {"cur_iter": "153", "eta": "0:07:49", "split": "test_iter", "time_diff": 0.63837}
+[07/09 11:43:51][INFO] logging.py:  99: json_stats: {"cur_iter": "154", "eta": "0:07:52", "split": "test_iter", "time_diff": 0.64363}
+[07/09 11:43:52][INFO] logging.py:  99: json_stats: {"cur_iter": "155", "eta": "0:07:47", "split": "test_iter", "time_diff": 0.63807}
+[07/09 11:43:52][INFO] logging.py:  99: json_stats: {"cur_iter": "156", "eta": "0:07:47", "split": "test_iter", "time_diff": 0.63881}
+[07/09 11:43:53][INFO] logging.py:  99: json_stats: {"cur_iter": "157", "eta": "0:07:46", "split": "test_iter", "time_diff": 0.63761}
+[07/09 11:43:54][INFO] logging.py:  99: json_stats: {"cur_iter": "158", "eta": "0:07:46", "split": "test_iter", "time_diff": 0.63859}
+[07/09 11:43:54][INFO] logging.py:  99: json_stats: {"cur_iter": "159", "eta": "0:07:46", "split": "test_iter", "time_diff": 0.63925}
+[07/09 11:43:55][INFO] logging.py:  99: json_stats: {"cur_iter": "160", "eta": "0:07:45", "split": "test_iter", "time_diff": 0.63889}
+[07/09 11:43:56][INFO] logging.py:  99: json_stats: {"cur_iter": "161", "eta": "0:07:45", "split": "test_iter", "time_diff": 0.63989}
+[07/09 11:43:56][INFO] logging.py:  99: json_stats: {"cur_iter": "162", "eta": "0:07:44", "split": "test_iter", "time_diff": 0.64020}
+[07/09 11:43:57][INFO] logging.py:  99: json_stats: {"cur_iter": "163", "eta": "0:07:42", "split": "test_iter", "time_diff": 0.63730}
+[07/09 11:43:58][INFO] logging.py:  99: json_stats: {"cur_iter": "164", "eta": "0:07:42", "split": "test_iter", "time_diff": 0.63865}
+[07/09 11:43:59][INFO] logging.py:  99: json_stats: {"cur_iter": "165", "eta": "0:08:19", "split": "test_iter", "time_diff": 0.69106}
+[07/09 11:43:59][INFO] logging.py:  99: json_stats: {"cur_iter": "166", "eta": "0:07:41", "split": "test_iter", "time_diff": 0.63965}
+[07/09 11:44:00][INFO] logging.py:  99: json_stats: {"cur_iter": "167", "eta": "0:07:41", "split": "test_iter", "time_diff": 0.64024}
+[07/09 11:44:01][INFO] logging.py:  99: json_stats: {"cur_iter": "168", "eta": "0:07:40", "split": "test_iter", "time_diff": 0.63899}
+[07/09 11:44:01][INFO] logging.py:  99: json_stats: {"cur_iter": "169", "eta": "0:07:38", "split": "test_iter", "time_diff": 0.63832}
+[07/09 11:44:02][INFO] logging.py:  99: json_stats: {"cur_iter": "170", "eta": "0:07:38", "split": "test_iter", "time_diff": 0.63815}
+[07/09 11:44:03][INFO] logging.py:  99: json_stats: {"cur_iter": "171", "eta": "0:07:36", "split": "test_iter", "time_diff": 0.63700}
+[07/09 11:44:03][INFO] logging.py:  99: json_stats: {"cur_iter": "172", "eta": "0:08:10", "split": "test_iter", "time_diff": 0.68487}
+[07/09 11:44:04][INFO] logging.py:  99: json_stats: {"cur_iter": "173", "eta": "0:08:11", "split": "test_iter", "time_diff": 0.68757}
+[07/09 11:44:05][INFO] logging.py:  99: json_stats: {"cur_iter": "174", "eta": "0:07:38", "split": "test_iter", "time_diff": 0.64283}
+[07/09 11:44:06][INFO] logging.py:  99: json_stats: {"cur_iter": "175", "eta": "0:07:35", "split": "test_iter", "time_diff": 0.63851}
+[07/09 11:44:06][INFO] logging.py:  99: json_stats: {"cur_iter": "176", "eta": "0:07:35", "split": "test_iter", "time_diff": 0.63930}
+[07/09 11:44:07][INFO] logging.py:  99: json_stats: {"cur_iter": "177", "eta": "0:07:33", "split": "test_iter", "time_diff": 0.63802}
+[07/09 11:44:08][INFO] logging.py:  99: json_stats: {"cur_iter": "178", "eta": "0:07:33", "split": "test_iter", "time_diff": 0.63899}
+[07/09 11:44:08][INFO] logging.py:  99: json_stats: {"cur_iter": "179", "eta": "0:07:51", "split": "test_iter", "time_diff": 0.66501}
+[07/09 11:44:09][INFO] logging.py:  99: json_stats: {"cur_iter": "180", "eta": "0:07:33", "split": "test_iter", "time_diff": 0.64022}
+[07/09 11:44:10][INFO] logging.py:  99: json_stats: {"cur_iter": "181", "eta": "0:08:00", "split": "test_iter", "time_diff": 0.67912}
+[07/09 11:44:11][INFO] logging.py:  99: json_stats: {"cur_iter": "182", "eta": "0:08:18", "split": "test_iter", "time_diff": 0.70609}
+[07/09 11:44:11][INFO] logging.py:  99: json_stats: {"cur_iter": "183", "eta": "0:07:31", "split": "test_iter", "time_diff": 0.64023}
+[07/09 11:44:12][INFO] logging.py:  99: json_stats: {"cur_iter": "184", "eta": "0:07:29", "split": "test_iter", "time_diff": 0.63842}
+[07/09 11:44:13][INFO] logging.py:  99: json_stats: {"cur_iter": "185", "eta": "0:07:48", "split": "test_iter", "time_diff": 0.66656}
+[07/09 11:44:13][INFO] logging.py:  99: json_stats: {"cur_iter": "186", "eta": "0:07:27", "split": "test_iter", "time_diff": 0.63750}
+[07/09 11:44:14][INFO] logging.py:  99: json_stats: {"cur_iter": "187", "eta": "0:07:27", "split": "test_iter", "time_diff": 0.63836}
+[07/09 11:44:15][INFO] logging.py:  99: json_stats: {"cur_iter": "188", "eta": "0:07:28", "split": "test_iter", "time_diff": 0.64094}
+[07/09 11:44:15][INFO] logging.py:  99: json_stats: {"cur_iter": "189", "eta": "0:07:26", "split": "test_iter", "time_diff": 0.63838}
+[07/09 11:44:16][INFO] logging.py:  99: json_stats: {"cur_iter": "190", "eta": "0:07:26", "split": "test_iter", "time_diff": 0.64004}
+[07/09 11:44:17][INFO] logging.py:  99: json_stats: {"cur_iter": "191", "eta": "0:07:26", "split": "test_iter", "time_diff": 0.64003}
+[07/09 11:44:18][INFO] logging.py:  99: json_stats: {"cur_iter": "192", "eta": "0:07:25", "split": "test_iter", "time_diff": 0.64030}
+[07/09 11:44:18][INFO] logging.py:  99: json_stats: {"cur_iter": "193", "eta": "0:07:28", "split": "test_iter", "time_diff": 0.64527}
+[07/09 11:44:19][INFO] logging.py:  99: json_stats: {"cur_iter": "194", "eta": "0:08:07", "split": "test_iter", "time_diff": 0.70296}
+[07/09 11:44:20][INFO] logging.py:  99: json_stats: {"cur_iter": "195", "eta": "0:08:09", "split": "test_iter", "time_diff": 0.70655}
+[07/09 11:44:20][INFO] logging.py:  99: json_stats: {"cur_iter": "196", "eta": "0:07:53", "split": "test_iter", "time_diff": 0.68390}
+[07/09 11:44:21][INFO] logging.py:  99: json_stats: {"cur_iter": "197", "eta": "0:07:58", "split": "test_iter", "time_diff": 0.69319}
+[07/09 11:44:22][INFO] logging.py:  99: json_stats: {"cur_iter": "198", "eta": "0:07:23", "split": "test_iter", "time_diff": 0.64284}
+[07/09 11:44:22][INFO] logging.py:  99: json_stats: {"cur_iter": "199", "eta": "0:07:23", "split": "test_iter", "time_diff": 0.64412}
+[07/09 11:44:23][INFO] logging.py:  99: json_stats: {"cur_iter": "200", "eta": "0:07:20", "split": "test_iter", "time_diff": 0.63981}
+[07/09 11:44:24][INFO] logging.py:  99: json_stats: {"cur_iter": "201", "eta": "0:07:22", "split": "test_iter", "time_diff": 0.64362}
+[07/09 11:44:25][INFO] logging.py:  99: json_stats: {"cur_iter": "202", "eta": "0:07:20", "split": "test_iter", "time_diff": 0.64205}
+[07/09 11:44:25][INFO] logging.py:  99: json_stats: {"cur_iter": "203", "eta": "0:07:16", "split": "test_iter", "time_diff": 0.63794}
+[07/09 11:44:26][INFO] logging.py:  99: json_stats: {"cur_iter": "204", "eta": "0:07:17", "split": "test_iter", "time_diff": 0.64003}
+[07/09 11:44:27][INFO] logging.py:  99: json_stats: {"cur_iter": "205", "eta": "0:07:16", "split": "test_iter", "time_diff": 0.63982}
+[07/09 11:44:27][INFO] logging.py:  99: json_stats: {"cur_iter": "206", "eta": "0:07:15", "split": "test_iter", "time_diff": 0.63906}
+[07/09 11:44:28][INFO] logging.py:  99: json_stats: {"cur_iter": "207", "eta": "0:07:18", "split": "test_iter", "time_diff": 0.64429}
+[07/09 11:44:29][INFO] logging.py:  99: json_stats: {"cur_iter": "208", "eta": "0:07:14", "split": "test_iter", "time_diff": 0.63840}
+[07/09 11:44:30][INFO] logging.py:  99: json_stats: {"cur_iter": "209", "eta": "0:07:22", "split": "test_iter", "time_diff": 0.65105}
+[07/09 11:44:30][INFO] logging.py:  99: json_stats: {"cur_iter": "210", "eta": "0:07:44", "split": "test_iter", "time_diff": 0.68532}
+[07/09 11:44:31][INFO] logging.py:  99: json_stats: {"cur_iter": "211", "eta": "0:07:34", "split": "test_iter", "time_diff": 0.67138}
+[07/09 11:44:32][INFO] logging.py:  99: json_stats: {"cur_iter": "212", "eta": "0:07:13", "split": "test_iter", "time_diff": 0.64077}
+[07/09 11:44:32][INFO] logging.py:  99: json_stats: {"cur_iter": "213", "eta": "0:07:50", "split": "test_iter", "time_diff": 0.69758}
+[07/09 11:44:33][INFO] logging.py:  99: json_stats: {"cur_iter": "214", "eta": "0:07:11", "split": "test_iter", "time_diff": 0.64020}
+[07/09 11:44:34][INFO] logging.py:  99: json_stats: {"cur_iter": "215", "eta": "0:07:11", "split": "test_iter", "time_diff": 0.64117}
+[07/09 11:44:34][INFO] logging.py:  99: json_stats: {"cur_iter": "216", "eta": "0:07:11", "split": "test_iter", "time_diff": 0.64214}
+[07/09 11:44:35][INFO] logging.py:  99: json_stats: {"cur_iter": "217", "eta": "0:07:10", "split": "test_iter", "time_diff": 0.64131}
+[07/09 11:44:36][INFO] logging.py:  99: json_stats: {"cur_iter": "218", "eta": "0:07:13", "split": "test_iter", "time_diff": 0.64630}
+[07/09 11:44:37][INFO] logging.py:  99: json_stats: {"cur_iter": "219", "eta": "0:07:08", "split": "test_iter", "time_diff": 0.63990}
+[07/09 11:44:37][INFO] logging.py:  99: json_stats: {"cur_iter": "220", "eta": "0:07:07", "split": "test_iter", "time_diff": 0.63954}
+[07/09 11:44:38][INFO] logging.py:  99: json_stats: {"cur_iter": "221", "eta": "0:07:06", "split": "test_iter", "time_diff": 0.63877}
+[07/09 11:44:39][INFO] logging.py:  99: json_stats: {"cur_iter": "222", "eta": "0:07:06", "split": "test_iter", "time_diff": 0.63965}
+[07/09 11:44:39][INFO] logging.py:  99: json_stats: {"cur_iter": "223", "eta": "0:07:05", "split": "test_iter", "time_diff": 0.63956}
+[07/09 11:44:40][INFO] logging.py:  99: json_stats: {"cur_iter": "224", "eta": "0:07:04", "split": "test_iter", "time_diff": 0.63929}
+[07/09 11:44:41][INFO] logging.py:  99: json_stats: {"cur_iter": "225", "eta": "0:07:13", "split": "test_iter", "time_diff": 0.65388}
+[07/09 11:44:41][INFO] logging.py:  99: json_stats: {"cur_iter": "226", "eta": "0:07:03", "split": "test_iter", "time_diff": 0.63970}
+[07/09 11:44:42][INFO] logging.py:  99: json_stats: {"cur_iter": "227", "eta": "0:07:31", "split": "test_iter", "time_diff": 0.68236}
+[07/09 11:44:43][INFO] logging.py:  99: json_stats: {"cur_iter": "228", "eta": "0:07:10", "split": "test_iter", "time_diff": 0.65204}
+[07/09 11:44:44][INFO] logging.py:  99: json_stats: {"cur_iter": "229", "eta": "0:07:36", "split": "test_iter", "time_diff": 0.69277}
+[07/09 11:44:44][INFO] logging.py:  99: json_stats: {"cur_iter": "230", "eta": "0:07:05", "split": "test_iter", "time_diff": 0.64682}
+[07/09 11:44:45][INFO] logging.py:  99: json_stats: {"cur_iter": "231", "eta": "0:07:00", "split": "test_iter", "time_diff": 0.64037}
+[07/09 11:44:46][INFO] logging.py:  99: json_stats: {"cur_iter": "232", "eta": "0:07:05", "split": "test_iter", "time_diff": 0.64824}
+[07/09 11:44:46][INFO] logging.py:  99: json_stats: {"cur_iter": "233", "eta": "0:06:59", "split": "test_iter", "time_diff": 0.64004}
+[07/09 11:44:47][INFO] logging.py:  99: json_stats: {"cur_iter": "234", "eta": "0:06:59", "split": "test_iter", "time_diff": 0.64106}
+[07/09 11:44:48][INFO] logging.py:  99: json_stats: {"cur_iter": "235", "eta": "0:06:57", "split": "test_iter", "time_diff": 0.63946}
+[07/09 11:44:49][INFO] logging.py:  99: json_stats: {"cur_iter": "236", "eta": "0:07:07", "split": "test_iter", "time_diff": 0.65518}
+[07/09 11:44:49][INFO] logging.py:  99: json_stats: {"cur_iter": "237", "eta": "0:07:23", "split": "test_iter", "time_diff": 0.68088}
+[07/09 11:44:50][INFO] logging.py:  99: json_stats: {"cur_iter": "238", "eta": "0:06:55", "split": "test_iter", "time_diff": 0.63930}
+[07/09 11:44:51][INFO] logging.py:  99: json_stats: {"cur_iter": "239", "eta": "0:07:07", "split": "test_iter", "time_diff": 0.65928}
+[07/09 11:44:51][INFO] logging.py:  99: json_stats: {"cur_iter": "240", "eta": "0:06:56", "split": "test_iter", "time_diff": 0.64217}
+[07/09 11:44:52][INFO] logging.py:  99: json_stats: {"cur_iter": "241", "eta": "0:06:54", "split": "test_iter", "time_diff": 0.64025}
+[07/09 11:44:53][INFO] logging.py:  99: json_stats: {"cur_iter": "242", "eta": "0:07:19", "split": "test_iter", "time_diff": 0.67982}
+[07/09 11:44:54][INFO] logging.py:  99: json_stats: {"cur_iter": "243", "eta": "0:07:00", "split": "test_iter", "time_diff": 0.65147}
+[07/09 11:44:54][INFO] logging.py:  99: json_stats: {"cur_iter": "244", "eta": "0:06:52", "split": "test_iter", "time_diff": 0.64108}
+[07/09 11:44:55][INFO] logging.py:  99: json_stats: {"cur_iter": "245", "eta": "0:06:56", "split": "test_iter", "time_diff": 0.64708}
+[07/09 11:44:56][INFO] logging.py:  99: json_stats: {"cur_iter": "246", "eta": "0:06:50", "split": "test_iter", "time_diff": 0.64007}
+[07/09 11:44:56][INFO] logging.py:  99: json_stats: {"cur_iter": "247", "eta": "0:06:51", "split": "test_iter", "time_diff": 0.64179}
+[07/09 11:44:57][INFO] logging.py:  99: json_stats: {"cur_iter": "248", "eta": "0:06:49", "split": "test_iter", "time_diff": 0.63916}
+[07/09 11:44:58][INFO] logging.py:  99: json_stats: {"cur_iter": "249", "eta": "0:06:54", "split": "test_iter", "time_diff": 0.64873}
+[07/09 11:44:58][INFO] logging.py:  99: json_stats: {"cur_iter": "250", "eta": "0:06:49", "split": "test_iter", "time_diff": 0.64163}
+[07/09 11:44:59][INFO] logging.py:  99: json_stats: {"cur_iter": "251", "eta": "0:06:47", "split": "test_iter", "time_diff": 0.63926}
+[07/09 11:45:00][INFO] logging.py:  99: json_stats: {"cur_iter": "252", "eta": "0:06:47", "split": "test_iter", "time_diff": 0.64096}
+[07/09 11:45:01][INFO] logging.py:  99: json_stats: {"cur_iter": "253", "eta": "0:07:09", "split": "test_iter", "time_diff": 0.67699}
+[07/09 11:45:01][INFO] logging.py:  99: json_stats: {"cur_iter": "254", "eta": "0:06:45", "split": "test_iter", "time_diff": 0.64026}
+[07/09 11:45:02][INFO] logging.py:  99: json_stats: {"cur_iter": "255", "eta": "0:06:52", "split": "test_iter", "time_diff": 0.65231}
+[07/09 11:45:03][INFO] logging.py:  99: json_stats: {"cur_iter": "256", "eta": "0:06:47", "split": "test_iter", "time_diff": 0.64450}
+[07/09 11:45:03][INFO] logging.py:  99: json_stats: {"cur_iter": "257", "eta": "0:06:44", "split": "test_iter", "time_diff": 0.64028}
+[07/09 11:45:04][INFO] logging.py:  99: json_stats: {"cur_iter": "258", "eta": "0:07:16", "split": "test_iter", "time_diff": 0.69325}
+[07/09 11:45:05][INFO] logging.py:  99: json_stats: {"cur_iter": "259", "eta": "0:06:42", "split": "test_iter", "time_diff": 0.64021}
+[07/09 11:45:06][INFO] logging.py:  99: json_stats: {"cur_iter": "260", "eta": "0:06:47", "split": "test_iter", "time_diff": 0.64841}
+[07/09 11:45:06][INFO] logging.py:  99: json_stats: {"cur_iter": "261", "eta": "0:06:41", "split": "test_iter", "time_diff": 0.64075}
+[07/09 11:45:07][INFO] logging.py:  99: json_stats: {"cur_iter": "262", "eta": "0:06:46", "split": "test_iter", "time_diff": 0.64879}
+[07/09 11:45:08][INFO] logging.py:  99: json_stats: {"cur_iter": "263", "eta": "0:06:42", "split": "test_iter", "time_diff": 0.64333}
+[07/09 11:45:08][INFO] logging.py:  99: json_stats: {"cur_iter": "264", "eta": "0:06:41", "split": "test_iter", "time_diff": 0.64281}
+[07/09 11:45:09][INFO] logging.py:  99: json_stats: {"cur_iter": "265", "eta": "0:06:38", "split": "test_iter", "time_diff": 0.63903}
+[07/09 11:45:10][INFO] logging.py:  99: json_stats: {"cur_iter": "266", "eta": "0:06:39", "split": "test_iter", "time_diff": 0.64252}
+[07/09 11:45:11][INFO] logging.py:  99: json_stats: {"cur_iter": "267", "eta": "0:06:42", "split": "test_iter", "time_diff": 0.64862}
+[07/09 11:45:11][INFO] logging.py:  99: json_stats: {"cur_iter": "268", "eta": "0:06:38", "split": "test_iter", "time_diff": 0.64275}
+[07/09 11:45:12][INFO] logging.py:  99: json_stats: {"cur_iter": "269", "eta": "0:06:40", "split": "test_iter", "time_diff": 0.64780}
+[07/09 11:45:13][INFO] logging.py:  99: json_stats: {"cur_iter": "270", "eta": "0:06:34", "split": "test_iter", "time_diff": 0.63877}
+[07/09 11:45:13][INFO] logging.py:  99: json_stats: {"cur_iter": "271", "eta": "0:06:37", "split": "test_iter", "time_diff": 0.64483}
+[07/09 11:45:14][INFO] logging.py:  99: json_stats: {"cur_iter": "272", "eta": "0:06:37", "split": "test_iter", "time_diff": 0.64449}
+[07/09 11:45:15][INFO] logging.py:  99: json_stats: {"cur_iter": "273", "eta": "0:06:34", "split": "test_iter", "time_diff": 0.64203}
+[07/09 11:45:15][INFO] logging.py:  99: json_stats: {"cur_iter": "274", "eta": "0:06:35", "split": "test_iter", "time_diff": 0.64474}
+[07/09 11:45:16][INFO] logging.py:  99: json_stats: {"cur_iter": "275", "eta": "0:06:32", "split": "test_iter", "time_diff": 0.64056}
+[07/09 11:45:17][INFO] logging.py:  99: json_stats: {"cur_iter": "276", "eta": "0:06:33", "split": "test_iter", "time_diff": 0.64354}
+[07/09 11:45:18][INFO] logging.py:  99: json_stats: {"cur_iter": "277", "eta": "0:06:34", "split": "test_iter", "time_diff": 0.64486}
+[07/09 11:45:18][INFO] logging.py:  99: json_stats: {"cur_iter": "278", "eta": "0:06:35", "split": "test_iter", "time_diff": 0.64755}
+[07/09 11:45:19][INFO] logging.py:  99: json_stats: {"cur_iter": "279", "eta": "0:06:29", "split": "test_iter", "time_diff": 0.63945}
+[07/09 11:45:20][INFO] logging.py:  99: json_stats: {"cur_iter": "280", "eta": "0:06:46", "split": "test_iter", "time_diff": 0.66916}
+[07/09 11:45:20][INFO] logging.py:  99: json_stats: {"cur_iter": "281", "eta": "0:06:57", "split": "test_iter", "time_diff": 0.68816}
+[07/09 11:45:21][INFO] logging.py:  99: json_stats: {"cur_iter": "282", "eta": "0:06:33", "split": "test_iter", "time_diff": 0.64941}
+[07/09 11:45:22][INFO] logging.py:  99: json_stats: {"cur_iter": "283", "eta": "0:06:34", "split": "test_iter", "time_diff": 0.65227}
+[07/09 11:45:23][INFO] logging.py:  99: json_stats: {"cur_iter": "284", "eta": "0:06:36", "split": "test_iter", "time_diff": 0.65621}
+[07/09 11:45:23][INFO] logging.py:  99: json_stats: {"cur_iter": "285", "eta": "0:06:35", "split": "test_iter", "time_diff": 0.65598}
+[07/09 11:45:24][INFO] logging.py:  99: json_stats: {"cur_iter": "286", "eta": "0:06:25", "split": "test_iter", "time_diff": 0.64044}
+[07/09 11:45:25][INFO] logging.py:  99: json_stats: {"cur_iter": "287", "eta": "0:06:27", "split": "test_iter", "time_diff": 0.64455}
+[07/09 11:45:25][INFO] logging.py:  99: json_stats: {"cur_iter": "288", "eta": "0:06:50", "split": "test_iter", "time_diff": 0.68448}
+[07/09 11:45:26][INFO] logging.py:  99: json_stats: {"cur_iter": "289", "eta": "0:06:30", "split": "test_iter", "time_diff": 0.65156}
+[07/09 11:45:27][INFO] logging.py:  99: json_stats: {"cur_iter": "290", "eta": "0:06:23", "split": "test_iter", "time_diff": 0.64136}
+[07/09 11:45:28][INFO] logging.py:  99: json_stats: {"cur_iter": "291", "eta": "0:06:26", "split": "test_iter", "time_diff": 0.64771}
+[07/09 11:45:28][INFO] logging.py:  99: json_stats: {"cur_iter": "292", "eta": "0:06:21", "split": "test_iter", "time_diff": 0.63993}
+[07/09 11:45:29][INFO] logging.py:  99: json_stats: {"cur_iter": "293", "eta": "0:06:21", "split": "test_iter", "time_diff": 0.64178}
+[07/09 11:45:30][INFO] logging.py:  99: json_stats: {"cur_iter": "294", "eta": "0:06:24", "split": "test_iter", "time_diff": 0.64789}
+[07/09 11:45:30][INFO] logging.py:  99: json_stats: {"cur_iter": "295", "eta": "0:06:29", "split": "test_iter", "time_diff": 0.65747}
+[07/09 11:45:31][INFO] logging.py:  99: json_stats: {"cur_iter": "296", "eta": "0:06:18", "split": "test_iter", "time_diff": 0.63877}
+[07/09 11:45:32][INFO] logging.py:  99: json_stats: {"cur_iter": "297", "eta": "0:06:20", "split": "test_iter", "time_diff": 0.64374}
+[07/09 11:45:32][INFO] logging.py:  99: json_stats: {"cur_iter": "298", "eta": "0:06:18", "split": "test_iter", "time_diff": 0.64193}
+[07/09 11:45:33][INFO] logging.py:  99: json_stats: {"cur_iter": "299", "eta": "0:06:20", "split": "test_iter", "time_diff": 0.64557}
+[07/09 11:45:34][INFO] logging.py:  99: json_stats: {"cur_iter": "300", "eta": "0:06:24", "split": "test_iter", "time_diff": 0.65355}
+[07/09 11:45:35][INFO] logging.py:  99: json_stats: {"cur_iter": "301", "eta": "0:06:59", "split": "test_iter", "time_diff": 0.71470}
+[07/09 11:45:35][INFO] logging.py:  99: json_stats: {"cur_iter": "302", "eta": "0:06:26", "split": "test_iter", "time_diff": 0.65949}
+[07/09 11:45:36][INFO] logging.py:  99: json_stats: {"cur_iter": "303", "eta": "0:06:17", "split": "test_iter", "time_diff": 0.64578}
+[07/09 11:45:37][INFO] logging.py:  99: json_stats: {"cur_iter": "304", "eta": "0:06:15", "split": "test_iter", "time_diff": 0.64337}
+[07/09 11:45:37][INFO] logging.py:  99: json_stats: {"cur_iter": "305", "eta": "0:06:44", "split": "test_iter", "time_diff": 0.69428}
+[07/09 11:45:38][INFO] logging.py:  99: json_stats: {"cur_iter": "306", "eta": "0:06:18", "split": "test_iter", "time_diff": 0.65083}
+[07/09 11:45:39][INFO] logging.py:  99: json_stats: {"cur_iter": "307", "eta": "0:06:33", "split": "test_iter", "time_diff": 0.67657}
+[07/09 11:45:40][INFO] logging.py:  99: json_stats: {"cur_iter": "308", "eta": "0:06:34", "split": "test_iter", "time_diff": 0.68066}
+[07/09 11:45:40][INFO] logging.py:  99: json_stats: {"cur_iter": "309", "eta": "0:06:11", "split": "test_iter", "time_diff": 0.64111}
+[07/09 11:45:41][INFO] logging.py:  99: json_stats: {"cur_iter": "310", "eta": "0:06:12", "split": "test_iter", "time_diff": 0.64425}
+[07/09 11:45:42][INFO] logging.py:  99: json_stats: {"cur_iter": "311", "eta": "0:06:09", "split": "test_iter", "time_diff": 0.64052}
+[07/09 11:45:42][INFO] logging.py:  99: json_stats: {"cur_iter": "312", "eta": "0:06:23", "split": "test_iter", "time_diff": 0.66604}
+[07/09 11:45:43][INFO] logging.py:  99: json_stats: {"cur_iter": "313", "eta": "0:06:12", "split": "test_iter", "time_diff": 0.64868}
+[07/09 11:45:44][INFO] logging.py:  99: json_stats: {"cur_iter": "314", "eta": "0:06:07", "split": "test_iter", "time_diff": 0.63986}
+[07/09 11:45:45][INFO] logging.py:  99: json_stats: {"cur_iter": "315", "eta": "0:06:21", "split": "test_iter", "time_diff": 0.66661}
+[07/09 11:45:45][INFO] logging.py:  99: json_stats: {"cur_iter": "316", "eta": "0:06:07", "split": "test_iter", "time_diff": 0.64306}
+[07/09 11:45:46][INFO] logging.py:  99: json_stats: {"cur_iter": "317", "eta": "0:06:05", "split": "test_iter", "time_diff": 0.64066}
+[07/09 11:45:47][INFO] logging.py:  99: json_stats: {"cur_iter": "318", "eta": "0:06:08", "split": "test_iter", "time_diff": 0.64655}
+[07/09 11:45:47][INFO] logging.py:  99: json_stats: {"cur_iter": "319", "eta": "0:06:05", "split": "test_iter", "time_diff": 0.64280}
+[07/09 11:45:48][INFO] logging.py:  99: json_stats: {"cur_iter": "320", "eta": "0:06:03", "split": "test_iter", "time_diff": 0.64019}
+[07/09 11:45:49][INFO] logging.py:  99: json_stats: {"cur_iter": "321", "eta": "0:06:03", "split": "test_iter", "time_diff": 0.64023}
+[07/09 11:45:50][INFO] logging.py:  99: json_stats: {"cur_iter": "322", "eta": "0:06:06", "split": "test_iter", "time_diff": 0.64794}
+[07/09 11:45:50][INFO] logging.py:  99: json_stats: {"cur_iter": "323", "eta": "0:06:02", "split": "test_iter", "time_diff": 0.64138}
+[07/09 11:45:51][INFO] logging.py:  99: json_stats: {"cur_iter": "324", "eta": "0:06:05", "split": "test_iter", "time_diff": 0.64720}
+[07/09 11:45:52][INFO] logging.py:  99: json_stats: {"cur_iter": "325", "eta": "0:06:02", "split": "test_iter", "time_diff": 0.64310}
+[07/09 11:45:52][INFO] logging.py:  99: json_stats: {"cur_iter": "326", "eta": "0:06:04", "split": "test_iter", "time_diff": 0.64940}
+[07/09 11:45:53][INFO] logging.py:  99: json_stats: {"cur_iter": "327", "eta": "0:05:58", "split": "test_iter", "time_diff": 0.63986}
+[07/09 11:45:54][INFO] logging.py:  99: json_stats: {"cur_iter": "328", "eta": "0:06:03", "split": "test_iter", "time_diff": 0.64926}
+[07/09 11:45:54][INFO] logging.py:  99: json_stats: {"cur_iter": "329", "eta": "0:05:58", "split": "test_iter", "time_diff": 0.64145}
+[07/09 11:45:55][INFO] logging.py:  99: json_stats: {"cur_iter": "330", "eta": "0:06:04", "split": "test_iter", "time_diff": 0.65271}
+[07/09 11:45:56][INFO] logging.py:  99: json_stats: {"cur_iter": "331", "eta": "0:05:56", "split": "test_iter", "time_diff": 0.63999}
+[07/09 11:45:57][INFO] logging.py:  99: json_stats: {"cur_iter": "332", "eta": "0:05:57", "split": "test_iter", "time_diff": 0.64362}
+[07/09 11:45:57][INFO] logging.py:  99: json_stats: {"cur_iter": "333", "eta": "0:06:28", "split": "test_iter", "time_diff": 0.69913}
+[07/09 11:45:58][INFO] logging.py:  99: json_stats: {"cur_iter": "334", "eta": "0:05:54", "split": "test_iter", "time_diff": 0.63982}
+[07/09 11:45:59][INFO] logging.py:  99: json_stats: {"cur_iter": "335", "eta": "0:05:54", "split": "test_iter", "time_diff": 0.64066}
+[07/09 11:45:59][INFO] logging.py:  99: json_stats: {"cur_iter": "336", "eta": "0:06:03", "split": "test_iter", "time_diff": 0.65879}
+[07/09 11:46:00][INFO] logging.py:  99: json_stats: {"cur_iter": "337", "eta": "0:06:23", "split": "test_iter", "time_diff": 0.69554}
+[07/09 11:46:01][INFO] logging.py:  99: json_stats: {"cur_iter": "338", "eta": "0:06:23", "split": "test_iter", "time_diff": 0.69704}
+[07/09 11:46:02][INFO] logging.py:  99: json_stats: {"cur_iter": "339", "eta": "0:05:54", "split": "test_iter", "time_diff": 0.64528}
+[07/09 11:46:02][INFO] logging.py:  99: json_stats: {"cur_iter": "340", "eta": "0:05:51", "split": "test_iter", "time_diff": 0.64096}
+[07/09 11:46:03][INFO] logging.py:  99: json_stats: {"cur_iter": "341", "eta": "0:05:51", "split": "test_iter", "time_diff": 0.64222}
+[07/09 11:46:04][INFO] logging.py:  99: json_stats: {"cur_iter": "342", "eta": "0:05:54", "split": "test_iter", "time_diff": 0.64934}
+[07/09 11:46:04][INFO] logging.py:  99: json_stats: {"cur_iter": "343", "eta": "0:05:49", "split": "test_iter", "time_diff": 0.64089}
+[07/09 11:46:05][INFO] logging.py:  99: json_stats: {"cur_iter": "344", "eta": "0:05:52", "split": "test_iter", "time_diff": 0.64886}
+[07/09 11:46:06][INFO] logging.py:  99: json_stats: {"cur_iter": "345", "eta": "0:05:50", "split": "test_iter", "time_diff": 0.64634}
+[07/09 11:46:07][INFO] logging.py:  99: json_stats: {"cur_iter": "346", "eta": "0:05:47", "split": "test_iter", "time_diff": 0.64038}
+[07/09 11:46:07][INFO] logging.py:  99: json_stats: {"cur_iter": "347", "eta": "0:06:07", "split": "test_iter", "time_diff": 0.67950}
+[07/09 11:46:08][INFO] logging.py:  99: json_stats: {"cur_iter": "348", "eta": "0:05:56", "split": "test_iter", "time_diff": 0.65934}
+[07/09 11:46:09][INFO] logging.py:  99: json_stats: {"cur_iter": "349", "eta": "0:05:45", "split": "test_iter", "time_diff": 0.64147}
+[07/09 11:46:09][INFO] logging.py:  99: json_stats: {"cur_iter": "350", "eta": "0:05:48", "split": "test_iter", "time_diff": 0.64814}
+[07/09 11:46:10][INFO] logging.py:  99: json_stats: {"cur_iter": "351", "eta": "0:05:43", "split": "test_iter", "time_diff": 0.63904}
+[07/09 11:46:11][INFO] logging.py:  99: json_stats: {"cur_iter": "352", "eta": "0:05:51", "split": "test_iter", "time_diff": 0.65655}
+[07/09 11:46:12][INFO] logging.py:  99: json_stats: {"cur_iter": "353", "eta": "0:05:45", "split": "test_iter", "time_diff": 0.64525}
+[07/09 11:46:12][INFO] logging.py:  99: json_stats: {"cur_iter": "354", "eta": "0:05:43", "split": "test_iter", "time_diff": 0.64296}
+[07/09 11:46:13][INFO] logging.py:  99: json_stats: {"cur_iter": "355", "eta": "0:05:42", "split": "test_iter", "time_diff": 0.64276}
+[07/09 11:46:14][INFO] logging.py:  99: json_stats: {"cur_iter": "356", "eta": "0:05:45", "split": "test_iter", "time_diff": 0.64958}
+[07/09 11:46:14][INFO] logging.py:  99: json_stats: {"cur_iter": "357", "eta": "0:05:43", "split": "test_iter", "time_diff": 0.64626}
+[07/09 11:46:15][INFO] logging.py:  99: json_stats: {"cur_iter": "358", "eta": "0:05:41", "split": "test_iter", "time_diff": 0.64507}
+[07/09 11:46:16][INFO] logging.py:  99: json_stats: {"cur_iter": "359", "eta": "0:05:43", "split": "test_iter", "time_diff": 0.64938}
+[07/09 11:46:16][INFO] logging.py:  99: json_stats: {"cur_iter": "360", "eta": "0:05:53", "split": "test_iter", "time_diff": 0.66977}
+[07/09 11:46:17][INFO] logging.py:  99: json_stats: {"cur_iter": "361", "eta": "0:05:41", "split": "test_iter", "time_diff": 0.64836}
+[07/09 11:46:18][INFO] logging.py:  99: json_stats: {"cur_iter": "362", "eta": "0:05:51", "split": "test_iter", "time_diff": 0.66751}
+[07/09 11:46:19][INFO] logging.py:  99: json_stats: {"cur_iter": "363", "eta": "0:05:36", "split": "test_iter", "time_diff": 0.64163}
+[07/09 11:46:19][INFO] logging.py:  99: json_stats: {"cur_iter": "364", "eta": "0:06:41", "split": "test_iter", "time_diff": 0.76587}
+[07/09 11:46:20][INFO] logging.py:  99: json_stats: {"cur_iter": "365", "eta": "0:05:34", "split": "test_iter", "time_diff": 0.64030}
+[07/09 11:46:21][INFO] logging.py:  99: json_stats: {"cur_iter": "366", "eta": "0:05:35", "split": "test_iter", "time_diff": 0.64302}
+[07/09 11:46:22][INFO] logging.py:  99: json_stats: {"cur_iter": "367", "eta": "0:05:36", "split": "test_iter", "time_diff": 0.64590}
+[07/09 11:46:22][INFO] logging.py:  99: json_stats: {"cur_iter": "368", "eta": "0:05:37", "split": "test_iter", "time_diff": 0.64992}
+[07/09 11:46:23][INFO] logging.py:  99: json_stats: {"cur_iter": "369", "eta": "0:05:32", "split": "test_iter", "time_diff": 0.63999}
+[07/09 11:46:24][INFO] logging.py:  99: json_stats: {"cur_iter": "370", "eta": "0:05:31", "split": "test_iter", "time_diff": 0.64007}
+[07/09 11:46:24][INFO] logging.py:  99: json_stats: {"cur_iter": "371", "eta": "0:05:30", "split": "test_iter", "time_diff": 0.64001}
+[07/09 11:46:25][INFO] logging.py:  99: json_stats: {"cur_iter": "372", "eta": "0:05:30", "split": "test_iter", "time_diff": 0.64079}
+[07/09 11:46:26][INFO] logging.py:  99: json_stats: {"cur_iter": "373", "eta": "0:05:30", "split": "test_iter", "time_diff": 0.64133}
+[07/09 11:46:27][INFO] logging.py:  99: json_stats: {"cur_iter": "374", "eta": "0:05:32", "split": "test_iter", "time_diff": 0.64700}
+[07/09 11:46:27][INFO] logging.py:  99: json_stats: {"cur_iter": "375", "eta": "0:05:45", "split": "test_iter", "time_diff": 0.67273}
+[07/09 11:46:28][INFO] logging.py:  99: json_stats: {"cur_iter": "376", "eta": "0:05:27", "split": "test_iter", "time_diff": 0.63969}
+[07/09 11:46:29][INFO] logging.py:  99: json_stats: {"cur_iter": "377", "eta": "0:05:35", "split": "test_iter", "time_diff": 0.65749}
+[07/09 11:46:29][INFO] logging.py:  99: json_stats: {"cur_iter": "378", "eta": "0:05:26", "split": "test_iter", "time_diff": 0.64036}
+[07/09 11:46:30][INFO] logging.py:  99: json_stats: {"cur_iter": "379", "eta": "0:05:27", "split": "test_iter", "time_diff": 0.64426}
+[07/09 11:46:31][INFO] logging.py:  99: json_stats: {"cur_iter": "380", "eta": "0:05:35", "split": "test_iter", "time_diff": 0.66116}
+[07/09 11:46:32][INFO] logging.py:  99: json_stats: {"cur_iter": "381", "eta": "0:05:32", "split": "test_iter", "time_diff": 0.65488}
+[07/09 11:46:32][INFO] logging.py:  99: json_stats: {"cur_iter": "382", "eta": "0:05:31", "split": "test_iter", "time_diff": 0.65573}
+[07/09 11:46:33][INFO] logging.py:  99: json_stats: {"cur_iter": "383", "eta": "0:05:23", "split": "test_iter", "time_diff": 0.63971}
+[07/09 11:46:34][INFO] logging.py:  99: json_stats: {"cur_iter": "384", "eta": "0:05:41", "split": "test_iter", "time_diff": 0.67820}
+[07/09 11:46:35][INFO] logging.py:  99: json_stats: {"cur_iter": "385", "eta": "0:05:32", "split": "test_iter", "time_diff": 0.66081}
+[07/09 11:46:35][INFO] logging.py:  99: json_stats: {"cur_iter": "386", "eta": "0:05:21", "split": "test_iter", "time_diff": 0.64133}
+[07/09 11:46:36][INFO] logging.py:  99: json_stats: {"cur_iter": "387", "eta": "0:05:30", "split": "test_iter", "time_diff": 0.65959}
+[07/09 11:46:37][INFO] logging.py:  99: json_stats: {"cur_iter": "388", "eta": "0:05:20", "split": "test_iter", "time_diff": 0.64032}
+[07/09 11:46:37][INFO] logging.py:  99: json_stats: {"cur_iter": "389", "eta": "0:05:20", "split": "test_iter", "time_diff": 0.64152}
+[07/09 11:46:38][INFO] logging.py:  99: json_stats: {"cur_iter": "390", "eta": "0:05:22", "split": "test_iter", "time_diff": 0.64662}
+[07/09 11:46:39][INFO] logging.py:  99: json_stats: {"cur_iter": "391", "eta": "0:05:22", "split": "test_iter", "time_diff": 0.64796}
+[07/09 11:46:39][INFO] logging.py:  99: json_stats: {"cur_iter": "392", "eta": "0:05:21", "split": "test_iter", "time_diff": 0.64776}
+[07/09 11:46:40][INFO] logging.py:  99: json_stats: {"cur_iter": "393", "eta": "0:05:18", "split": "test_iter", "time_diff": 0.64283}
+[07/09 11:46:41][INFO] logging.py:  99: json_stats: {"cur_iter": "394", "eta": "0:05:16", "split": "test_iter", "time_diff": 0.64062}
+[07/09 11:46:42][INFO] logging.py:  99: json_stats: {"cur_iter": "395", "eta": "0:05:15", "split": "test_iter", "time_diff": 0.64061}
+[07/09 11:46:42][INFO] logging.py:  99: json_stats: {"cur_iter": "396", "eta": "0:05:19", "split": "test_iter", "time_diff": 0.65018}
+[07/09 11:46:43][INFO] logging.py:  99: json_stats: {"cur_iter": "397", "eta": "0:05:15", "split": "test_iter", "time_diff": 0.64270}
+[07/09 11:46:44][INFO] logging.py:  99: json_stats: {"cur_iter": "398", "eta": "0:05:26", "split": "test_iter", "time_diff": 0.66606}
+[07/09 11:46:44][INFO] logging.py:  99: json_stats: {"cur_iter": "399", "eta": "0:05:13", "split": "test_iter", "time_diff": 0.64139}
+[07/09 11:46:45][INFO] logging.py:  99: json_stats: {"cur_iter": "400", "eta": "0:05:18", "split": "test_iter", "time_diff": 0.65231}
+[07/09 11:46:46][INFO] logging.py:  99: json_stats: {"cur_iter": "401", "eta": "0:05:12", "split": "test_iter", "time_diff": 0.64131}
+[07/09 11:46:47][INFO] logging.py:  99: json_stats: {"cur_iter": "402", "eta": "0:05:11", "split": "test_iter", "time_diff": 0.64087}
+[07/09 11:46:47][INFO] logging.py:  99: json_stats: {"cur_iter": "403", "eta": "0:05:10", "split": "test_iter", "time_diff": 0.64034}
+[07/09 11:46:48][INFO] logging.py:  99: json_stats: {"cur_iter": "404", "eta": "0:05:52", "split": "test_iter", "time_diff": 0.72810}
+[07/09 11:46:49][INFO] logging.py:  99: json_stats: {"cur_iter": "405", "eta": "0:05:10", "split": "test_iter", "time_diff": 0.64218}
+[07/09 11:46:49][INFO] logging.py:  99: json_stats: {"cur_iter": "406", "eta": "0:05:08", "split": "test_iter", "time_diff": 0.64040}
+[07/09 11:46:50][INFO] logging.py:  99: json_stats: {"cur_iter": "407", "eta": "0:05:08", "split": "test_iter", "time_diff": 0.64080}
+[07/09 11:46:51][INFO] logging.py:  99: json_stats: {"cur_iter": "408", "eta": "0:05:12", "split": "test_iter", "time_diff": 0.65152}
+[07/09 11:46:52][INFO] logging.py:  99: json_stats: {"cur_iter": "409", "eta": "0:05:09", "split": "test_iter", "time_diff": 0.64652}
+[07/09 11:46:52][INFO] logging.py:  99: json_stats: {"cur_iter": "410", "eta": "0:05:09", "split": "test_iter", "time_diff": 0.64659}
+[07/09 11:46:53][INFO] logging.py:  99: json_stats: {"cur_iter": "411", "eta": "0:05:20", "split": "test_iter", "time_diff": 0.67222}
+[07/09 11:46:54][INFO] logging.py:  99: json_stats: {"cur_iter": "412", "eta": "0:05:27", "split": "test_iter", "time_diff": 0.68896}
+[07/09 11:46:54][INFO] logging.py:  99: json_stats: {"cur_iter": "413", "eta": "0:05:09", "split": "test_iter", "time_diff": 0.65082}
+[07/09 11:46:55][INFO] logging.py:  99: json_stats: {"cur_iter": "414", "eta": "0:05:06", "split": "test_iter", "time_diff": 0.64740}
+[07/09 11:46:56][INFO] logging.py:  99: json_stats: {"cur_iter": "415", "eta": "0:05:03", "split": "test_iter", "time_diff": 0.64142}
+[07/09 11:46:57][INFO] logging.py:  99: json_stats: {"cur_iter": "416", "eta": "0:05:09", "split": "test_iter", "time_diff": 0.65474}
+[07/09 11:46:57][INFO] logging.py:  99: json_stats: {"cur_iter": "417", "eta": "0:05:01", "split": "test_iter", "time_diff": 0.64087}
+[07/09 11:46:58][INFO] logging.py:  99: json_stats: {"cur_iter": "418", "eta": "0:05:07", "split": "test_iter", "time_diff": 0.65347}
+[07/09 11:46:59][INFO] logging.py:  99: json_stats: {"cur_iter": "419", "eta": "0:05:01", "split": "test_iter", "time_diff": 0.64354}
+[07/09 11:46:59][INFO] logging.py:  99: json_stats: {"cur_iter": "420", "eta": "0:05:00", "split": "test_iter", "time_diff": 0.64203}
+[07/09 11:47:00][INFO] logging.py:  99: json_stats: {"cur_iter": "421", "eta": "0:05:00", "split": "test_iter", "time_diff": 0.64283}
+[07/09 11:47:01][INFO] logging.py:  99: json_stats: {"cur_iter": "422", "eta": "0:04:58", "split": "test_iter", "time_diff": 0.64104}
+[07/09 11:47:02][INFO] logging.py:  99: json_stats: {"cur_iter": "423", "eta": "0:05:03", "split": "test_iter", "time_diff": 0.65248}
+[07/09 11:47:02][INFO] logging.py:  99: json_stats: {"cur_iter": "424", "eta": "0:04:57", "split": "test_iter", "time_diff": 0.64135}
+[07/09 11:47:03][INFO] logging.py:  99: json_stats: {"cur_iter": "425", "eta": "0:04:57", "split": "test_iter", "time_diff": 0.64231}
+[07/09 11:47:04][INFO] logging.py:  99: json_stats: {"cur_iter": "426", "eta": "0:04:59", "split": "test_iter", "time_diff": 0.64796}
+[07/09 11:47:04][INFO] logging.py:  99: json_stats: {"cur_iter": "427", "eta": "0:04:55", "split": "test_iter", "time_diff": 0.64140}
+[07/09 11:47:05][INFO] logging.py:  99: json_stats: {"cur_iter": "428", "eta": "0:04:59", "split": "test_iter", "time_diff": 0.65091}
+[07/09 11:47:06][INFO] logging.py:  99: json_stats: {"cur_iter": "429", "eta": "0:05:03", "split": "test_iter", "time_diff": 0.66218}
+[07/09 11:47:07][INFO] logging.py:  99: json_stats: {"cur_iter": "430", "eta": "0:04:56", "split": "test_iter", "time_diff": 0.64659}
+[07/09 11:47:07][INFO] logging.py:  99: json_stats: {"cur_iter": "431", "eta": "0:04:53", "split": "test_iter", "time_diff": 0.64184}
+[07/09 11:47:08][INFO] logging.py:  99: json_stats: {"cur_iter": "432", "eta": "0:04:52", "split": "test_iter", "time_diff": 0.64111}
+[07/09 11:47:09][INFO] logging.py:  99: json_stats: {"cur_iter": "433", "eta": "0:04:51", "split": "test_iter", "time_diff": 0.64169}
+[07/09 11:47:09][INFO] logging.py:  99: json_stats: {"cur_iter": "434", "eta": "0:04:52", "split": "test_iter", "time_diff": 0.64417}
+[07/09 11:47:10][INFO] logging.py:  99: json_stats: {"cur_iter": "435", "eta": "0:04:54", "split": "test_iter", "time_diff": 0.65004}
+[07/09 11:47:11][INFO] logging.py:  99: json_stats: {"cur_iter": "436", "eta": "0:05:07", "split": "test_iter", "time_diff": 0.68043}
+[07/09 11:47:12][INFO] logging.py:  99: json_stats: {"cur_iter": "437", "eta": "0:04:49", "split": "test_iter", "time_diff": 0.64126}
+[07/09 11:47:12][INFO] logging.py:  99: json_stats: {"cur_iter": "438", "eta": "0:04:50", "split": "test_iter", "time_diff": 0.64607}
+[07/09 11:47:13][INFO] logging.py:  99: json_stats: {"cur_iter": "439", "eta": "0:04:55", "split": "test_iter", "time_diff": 0.65722}
+[07/09 11:47:14][INFO] logging.py:  99: json_stats: {"cur_iter": "440", "eta": "0:04:47", "split": "test_iter", "time_diff": 0.64147}
+[07/09 11:47:14][INFO] logging.py:  99: json_stats: {"cur_iter": "441", "eta": "0:04:49", "split": "test_iter", "time_diff": 0.64871}
+[07/09 11:47:15][INFO] logging.py:  99: json_stats: {"cur_iter": "442", "eta": "0:04:45", "split": "test_iter", "time_diff": 0.63997}
+[07/09 11:47:16][INFO] logging.py:  99: json_stats: {"cur_iter": "443", "eta": "0:04:49", "split": "test_iter", "time_diff": 0.65083}
+[07/09 11:47:17][INFO] logging.py:  99: json_stats: {"cur_iter": "444", "eta": "0:04:51", "split": "test_iter", "time_diff": 0.65572}
+[07/09 11:47:17][INFO] logging.py:  99: json_stats: {"cur_iter": "445", "eta": "0:04:44", "split": "test_iter", "time_diff": 0.64197}
+[07/09 11:47:18][INFO] logging.py:  99: json_stats: {"cur_iter": "446", "eta": "0:04:51", "split": "test_iter", "time_diff": 0.65885}
+[07/09 11:47:19][INFO] logging.py:  99: json_stats: {"cur_iter": "447", "eta": "0:04:50", "split": "test_iter", "time_diff": 0.65815}
+[07/09 11:47:19][INFO] logging.py:  99: json_stats: {"cur_iter": "448", "eta": "0:04:53", "split": "test_iter", "time_diff": 0.66738}
+[07/09 11:47:20][INFO] logging.py:  99: json_stats: {"cur_iter": "449", "eta": "0:04:48", "split": "test_iter", "time_diff": 0.65663}
+[07/09 11:47:21][INFO] logging.py:  99: json_stats: {"cur_iter": "450", "eta": "0:04:40", "split": "test_iter", "time_diff": 0.64086}
+[07/09 11:47:22][INFO] logging.py:  99: json_stats: {"cur_iter": "451", "eta": "0:04:40", "split": "test_iter", "time_diff": 0.64162}
+[07/09 11:47:22][INFO] logging.py:  99: json_stats: {"cur_iter": "452", "eta": "0:04:43", "split": "test_iter", "time_diff": 0.65018}
+[07/09 11:47:23][INFO] logging.py:  99: json_stats: {"cur_iter": "453", "eta": "0:04:38", "split": "test_iter", "time_diff": 0.64128}
+[07/09 11:47:24][INFO] logging.py:  99: json_stats: {"cur_iter": "454", "eta": "0:04:44", "split": "test_iter", "time_diff": 0.65516}
+[07/09 11:47:24][INFO] logging.py:  99: json_stats: {"cur_iter": "455", "eta": "0:04:39", "split": "test_iter", "time_diff": 0.64514}
+[07/09 11:47:25][INFO] logging.py:  99: json_stats: {"cur_iter": "456", "eta": "0:04:37", "split": "test_iter", "time_diff": 0.64186}
+[07/09 11:47:26][INFO] logging.py:  99: json_stats: {"cur_iter": "457", "eta": "0:04:40", "split": "test_iter", "time_diff": 0.65183}
+[07/09 11:47:27][INFO] logging.py:  99: json_stats: {"cur_iter": "458", "eta": "0:04:43", "split": "test_iter", "time_diff": 0.65896}
+[07/09 11:47:27][INFO] logging.py:  99: json_stats: {"cur_iter": "459", "eta": "0:05:03", "split": "test_iter", "time_diff": 0.70798}
+[07/09 11:47:28][INFO] logging.py:  99: json_stats: {"cur_iter": "460", "eta": "0:04:39", "split": "test_iter", "time_diff": 0.65279}
+[07/09 11:47:29][INFO] logging.py:  99: json_stats: {"cur_iter": "461", "eta": "0:04:33", "split": "test_iter", "time_diff": 0.64081}
+[07/09 11:47:29][INFO] logging.py:  99: json_stats: {"cur_iter": "462", "eta": "0:05:01", "split": "test_iter", "time_diff": 0.70782}
+[07/09 11:47:30][INFO] logging.py:  99: json_stats: {"cur_iter": "463", "eta": "0:04:40", "split": "test_iter", "time_diff": 0.66098}
+[07/09 11:47:31][INFO] logging.py:  99: json_stats: {"cur_iter": "464", "eta": "0:04:36", "split": "test_iter", "time_diff": 0.65126}
+[07/09 11:47:32][INFO] logging.py:  99: json_stats: {"cur_iter": "465", "eta": "0:04:32", "split": "test_iter", "time_diff": 0.64365}
+[07/09 11:47:32][INFO] logging.py:  99: json_stats: {"cur_iter": "466", "eta": "0:04:30", "split": "test_iter", "time_diff": 0.64053}
+[07/09 11:47:33][INFO] logging.py:  99: json_stats: {"cur_iter": "467", "eta": "0:04:33", "split": "test_iter", "time_diff": 0.65059}
+[07/09 11:47:34][INFO] logging.py:  99: json_stats: {"cur_iter": "468", "eta": "0:04:31", "split": "test_iter", "time_diff": 0.64582}
+[07/09 11:47:34][INFO] logging.py:  99: json_stats: {"cur_iter": "469", "eta": "0:04:30", "split": "test_iter", "time_diff": 0.64477}
+[07/09 11:47:35][INFO] logging.py:  99: json_stats: {"cur_iter": "470", "eta": "0:04:31", "split": "test_iter", "time_diff": 0.64955}
+[07/09 11:47:36][INFO] logging.py:  99: json_stats: {"cur_iter": "471", "eta": "0:04:35", "split": "test_iter", "time_diff": 0.66028}
+[07/09 11:47:37][INFO] logging.py:  99: json_stats: {"cur_iter": "472", "eta": "0:04:40", "split": "test_iter", "time_diff": 0.67403}
+[07/09 11:47:37][INFO] logging.py:  99: json_stats: {"cur_iter": "473", "eta": "0:04:25", "split": "test_iter", "time_diff": 0.64093}
+[07/09 11:47:38][INFO] logging.py:  99: json_stats: {"cur_iter": "474", "eta": "0:04:25", "split": "test_iter", "time_diff": 0.64104}
+[07/09 11:47:39][INFO] logging.py:  99: json_stats: {"cur_iter": "475", "eta": "0:04:25", "split": "test_iter", "time_diff": 0.64178}
+[07/09 11:47:39][INFO] logging.py:  99: json_stats: {"cur_iter": "476", "eta": "0:04:24", "split": "test_iter", "time_diff": 0.64194}
+[07/09 11:47:40][INFO] logging.py:  99: json_stats: {"cur_iter": "477", "eta": "0:04:23", "split": "test_iter", "time_diff": 0.64178}
+[07/09 11:47:41][INFO] logging.py:  99: json_stats: {"cur_iter": "478", "eta": "0:04:22", "split": "test_iter", "time_diff": 0.64089}
+[07/09 11:47:42][INFO] logging.py:  99: json_stats: {"cur_iter": "479", "eta": "0:04:29", "split": "test_iter", "time_diff": 0.65859}
+[07/09 11:47:42][INFO] logging.py:  99: json_stats: {"cur_iter": "480", "eta": "0:04:27", "split": "test_iter", "time_diff": 0.65552}
+[07/09 11:47:43][INFO] logging.py:  99: json_stats: {"cur_iter": "481", "eta": "0:04:21", "split": "test_iter", "time_diff": 0.64336}
+[07/09 11:47:44][INFO] logging.py:  99: json_stats: {"cur_iter": "482", "eta": "0:04:20", "split": "test_iter", "time_diff": 0.64171}
+[07/09 11:47:44][INFO] logging.py:  99: json_stats: {"cur_iter": "483", "eta": "0:04:22", "split": "test_iter", "time_diff": 0.64886}
+[07/09 11:47:45][INFO] logging.py:  99: json_stats: {"cur_iter": "484", "eta": "0:04:19", "split": "test_iter", "time_diff": 0.64251}
+[07/09 11:47:46][INFO] logging.py:  99: json_stats: {"cur_iter": "485", "eta": "0:04:19", "split": "test_iter", "time_diff": 0.64481}
+[07/09 11:47:47][INFO] logging.py:  99: json_stats: {"cur_iter": "486", "eta": "0:04:18", "split": "test_iter", "time_diff": 0.64220}
+[07/09 11:47:47][INFO] logging.py:  99: json_stats: {"cur_iter": "487", "eta": "0:04:20", "split": "test_iter", "time_diff": 0.65041}
+[07/09 11:47:48][INFO] logging.py:  99: json_stats: {"cur_iter": "488", "eta": "0:04:19", "split": "test_iter", "time_diff": 0.64950}
+[07/09 11:47:49][INFO] logging.py:  99: json_stats: {"cur_iter": "489", "eta": "0:04:15", "split": "test_iter", "time_diff": 0.64007}
+[07/09 11:47:49][INFO] logging.py:  99: json_stats: {"cur_iter": "490", "eta": "0:04:15", "split": "test_iter", "time_diff": 0.64130}
+[07/09 11:47:50][INFO] logging.py:  99: json_stats: {"cur_iter": "491", "eta": "0:04:16", "split": "test_iter", "time_diff": 0.64666}
+[07/09 11:47:51][INFO] logging.py:  99: json_stats: {"cur_iter": "492", "eta": "0:04:13", "split": "test_iter", "time_diff": 0.64013}
+[07/09 11:47:52][INFO] logging.py:  99: json_stats: {"cur_iter": "493", "eta": "0:04:13", "split": "test_iter", "time_diff": 0.64080}
+[07/09 11:47:52][INFO] logging.py:  99: json_stats: {"cur_iter": "494", "eta": "0:04:12", "split": "test_iter", "time_diff": 0.63993}
+[07/09 11:47:53][INFO] logging.py:  99: json_stats: {"cur_iter": "495", "eta": "0:04:15", "split": "test_iter", "time_diff": 0.65132}
+[07/09 11:47:54][INFO] logging.py:  99: json_stats: {"cur_iter": "496", "eta": "0:04:11", "split": "test_iter", "time_diff": 0.64066}
+[07/09 11:47:54][INFO] logging.py:  99: json_stats: {"cur_iter": "497", "eta": "0:04:10", "split": "test_iter", "time_diff": 0.64116}
+[07/09 11:47:55][INFO] logging.py:  99: json_stats: {"cur_iter": "498", "eta": "0:04:09", "split": "test_iter", "time_diff": 0.64077}
+[07/09 11:47:56][INFO] logging.py:  99: json_stats: {"cur_iter": "499", "eta": "0:04:36", "split": "test_iter", "time_diff": 0.71054}
+[07/09 11:47:57][INFO] logging.py:  99: json_stats: {"cur_iter": "500", "eta": "0:04:16", "split": "test_iter", "time_diff": 0.66145}
+[07/09 11:47:57][INFO] logging.py:  99: json_stats: {"cur_iter": "501", "eta": "0:04:09", "split": "test_iter", "time_diff": 0.64528}
+[07/09 11:47:58][INFO] logging.py:  99: json_stats: {"cur_iter": "502", "eta": "0:04:13", "split": "test_iter", "time_diff": 0.65737}
+[07/09 11:47:59][INFO] logging.py:  99: json_stats: {"cur_iter": "503", "eta": "0:04:09", "split": "test_iter", "time_diff": 0.64701}
+[07/09 11:47:59][INFO] logging.py:  99: json_stats: {"cur_iter": "504", "eta": "0:04:07", "split": "test_iter", "time_diff": 0.64333}
+[07/09 11:48:00][INFO] logging.py:  99: json_stats: {"cur_iter": "505", "eta": "0:04:08", "split": "test_iter", "time_diff": 0.64805}
+[07/09 11:48:01][INFO] logging.py:  99: json_stats: {"cur_iter": "506", "eta": "0:04:08", "split": "test_iter", "time_diff": 0.64957}
+[07/09 11:48:02][INFO] logging.py:  99: json_stats: {"cur_iter": "507", "eta": "0:04:04", "split": "test_iter", "time_diff": 0.64043}
+[07/09 11:48:02][INFO] logging.py:  99: json_stats: {"cur_iter": "508", "eta": "0:04:07", "split": "test_iter", "time_diff": 0.65008}
+[07/09 11:48:03][INFO] logging.py:  99: json_stats: {"cur_iter": "509", "eta": "0:04:21", "split": "test_iter", "time_diff": 0.68894}
+[07/09 11:48:04][INFO] logging.py:  99: json_stats: {"cur_iter": "510", "eta": "0:04:06", "split": "test_iter", "time_diff": 0.65254}
+[07/09 11:48:04][INFO] logging.py:  99: json_stats: {"cur_iter": "511", "eta": "0:04:06", "split": "test_iter", "time_diff": 0.65499}
+[07/09 11:48:05][INFO] logging.py:  99: json_stats: {"cur_iter": "512", "eta": "0:04:04", "split": "test_iter", "time_diff": 0.64950}
+[07/09 11:48:06][INFO] logging.py:  99: json_stats: {"cur_iter": "513", "eta": "0:04:00", "split": "test_iter", "time_diff": 0.64113}
+[07/09 11:48:07][INFO] logging.py:  99: json_stats: {"cur_iter": "514", "eta": "0:04:03", "split": "test_iter", "time_diff": 0.65016}
+[07/09 11:48:07][INFO] logging.py:  99: json_stats: {"cur_iter": "515", "eta": "0:04:00", "split": "test_iter", "time_diff": 0.64442}
+[07/09 11:48:08][INFO] logging.py:  99: json_stats: {"cur_iter": "516", "eta": "0:04:04", "split": "test_iter", "time_diff": 0.65737}
+[07/09 11:48:09][INFO] logging.py:  99: json_stats: {"cur_iter": "517", "eta": "0:03:58", "split": "test_iter", "time_diff": 0.64201}
+[07/09 11:48:09][INFO] logging.py:  99: json_stats: {"cur_iter": "518", "eta": "0:03:59", "split": "test_iter", "time_diff": 0.64598}
+[07/09 11:48:10][INFO] logging.py:  99: json_stats: {"cur_iter": "519", "eta": "0:04:02", "split": "test_iter", "time_diff": 0.65762}
+[07/09 11:48:11][INFO] logging.py:  99: json_stats: {"cur_iter": "520", "eta": "0:04:03", "split": "test_iter", "time_diff": 0.66167}
+[07/09 11:48:12][INFO] logging.py:  99: json_stats: {"cur_iter": "521", "eta": "0:03:55", "split": "test_iter", "time_diff": 0.64107}
+[07/09 11:48:12][INFO] logging.py:  99: json_stats: {"cur_iter": "522", "eta": "0:04:01", "split": "test_iter", "time_diff": 0.65881}
+[07/09 11:48:13][INFO] logging.py:  99: json_stats: {"cur_iter": "523", "eta": "0:03:53", "split": "test_iter", "time_diff": 0.64093}
+[07/09 11:48:14][INFO] logging.py:  99: json_stats: {"cur_iter": "524", "eta": "0:03:59", "split": "test_iter", "time_diff": 0.65764}
+[07/09 11:48:14][INFO] logging.py:  99: json_stats: {"cur_iter": "525", "eta": "0:03:53", "split": "test_iter", "time_diff": 0.64220}
+[07/09 11:48:15][INFO] logging.py:  99: json_stats: {"cur_iter": "526", "eta": "0:03:57", "split": "test_iter", "time_diff": 0.65711}
+[07/09 11:48:16][INFO] logging.py:  99: json_stats: {"cur_iter": "527", "eta": "0:03:54", "split": "test_iter", "time_diff": 0.65002}
+[07/09 11:48:17][INFO] logging.py:  99: json_stats: {"cur_iter": "528", "eta": "0:03:53", "split": "test_iter", "time_diff": 0.64933}
+[07/09 11:48:17][INFO] logging.py:  99: json_stats: {"cur_iter": "529", "eta": "0:03:55", "split": "test_iter", "time_diff": 0.65618}
+[07/09 11:48:18][INFO] logging.py:  99: json_stats: {"cur_iter": "530", "eta": "0:03:53", "split": "test_iter", "time_diff": 0.65096}
+[07/09 11:48:19][INFO] logging.py:  99: json_stats: {"cur_iter": "531", "eta": "0:04:03", "split": "test_iter", "time_diff": 0.68173}
+[07/09 11:48:19][INFO] logging.py:  99: json_stats: {"cur_iter": "532", "eta": "0:03:48", "split": "test_iter", "time_diff": 0.64269}
+[07/09 11:48:20][INFO] logging.py:  99: json_stats: {"cur_iter": "533", "eta": "0:03:47", "split": "test_iter", "time_diff": 0.64175}
+[07/09 11:48:21][INFO] logging.py:  99: json_stats: {"cur_iter": "534", "eta": "0:03:49", "split": "test_iter", "time_diff": 0.64871}
+[07/09 11:48:22][INFO] logging.py:  99: json_stats: {"cur_iter": "535", "eta": "0:03:48", "split": "test_iter", "time_diff": 0.64699}
+[07/09 11:48:22][INFO] logging.py:  99: json_stats: {"cur_iter": "536", "eta": "0:03:58", "split": "test_iter", "time_diff": 0.67636}
+[07/09 11:48:23][INFO] logging.py:  99: json_stats: {"cur_iter": "537", "eta": "0:03:45", "split": "test_iter", "time_diff": 0.64126}
+[07/09 11:48:24][INFO] logging.py:  99: json_stats: {"cur_iter": "538", "eta": "0:03:48", "split": "test_iter", "time_diff": 0.65178}
+[07/09 11:48:24][INFO] logging.py:  99: json_stats: {"cur_iter": "539", "eta": "0:03:44", "split": "test_iter", "time_diff": 0.64412}
+[07/09 11:48:25][INFO] logging.py:  99: json_stats: {"cur_iter": "540", "eta": "0:03:46", "split": "test_iter", "time_diff": 0.65065}
+[07/09 11:48:26][INFO] logging.py:  99: json_stats: {"cur_iter": "541", "eta": "0:03:49", "split": "test_iter", "time_diff": 0.66132}
+[07/09 11:48:27][INFO] logging.py:  99: json_stats: {"cur_iter": "542", "eta": "0:03:44", "split": "test_iter", "time_diff": 0.64803}
+[07/09 11:48:27][INFO] logging.py:  99: json_stats: {"cur_iter": "543", "eta": "0:03:44", "split": "test_iter", "time_diff": 0.65171}
+[07/09 11:48:28][INFO] logging.py:  99: json_stats: {"cur_iter": "544", "eta": "0:03:43", "split": "test_iter", "time_diff": 0.65098}
+[07/09 11:48:29][INFO] logging.py:  99: json_stats: {"cur_iter": "545", "eta": "0:03:42", "split": "test_iter", "time_diff": 0.64959}
+[07/09 11:48:29][INFO] logging.py:  99: json_stats: {"cur_iter": "546", "eta": "0:03:38", "split": "test_iter", "time_diff": 0.64006}
+[07/09 11:48:30][INFO] logging.py:  99: json_stats: {"cur_iter": "547", "eta": "0:03:41", "split": "test_iter", "time_diff": 0.65046}
+[07/09 11:48:31][INFO] logging.py:  99: json_stats: {"cur_iter": "548", "eta": "0:03:40", "split": "test_iter", "time_diff": 0.64804}
+[07/09 11:48:32][INFO] logging.py:  99: json_stats: {"cur_iter": "549", "eta": "0:03:38", "split": "test_iter", "time_diff": 0.64308}
+[07/09 11:48:32][INFO] logging.py:  99: json_stats: {"cur_iter": "550", "eta": "0:03:38", "split": "test_iter", "time_diff": 0.64712}
+[07/09 11:48:33][INFO] logging.py:  99: json_stats: {"cur_iter": "551", "eta": "0:03:38", "split": "test_iter", "time_diff": 0.64802}
+[07/09 11:48:34][INFO] logging.py:  99: json_stats: {"cur_iter": "552", "eta": "0:03:41", "split": "test_iter", "time_diff": 0.66067}
+[07/09 11:48:34][INFO] logging.py:  99: json_stats: {"cur_iter": "553", "eta": "0:03:36", "split": "test_iter", "time_diff": 0.64570}
+[07/09 11:48:35][INFO] logging.py:  99: json_stats: {"cur_iter": "554", "eta": "0:03:46", "split": "test_iter", "time_diff": 0.67889}
+[07/09 11:48:36][INFO] logging.py:  99: json_stats: {"cur_iter": "555", "eta": "0:04:18", "split": "test_iter", "time_diff": 0.77672}
+[07/09 11:48:37][INFO] logging.py:  99: json_stats: {"cur_iter": "556", "eta": "0:03:32", "split": "test_iter", "time_diff": 0.64079}
+[07/09 11:48:37][INFO] logging.py:  99: json_stats: {"cur_iter": "557", "eta": "0:03:49", "split": "test_iter", "time_diff": 0.69318}
+[07/09 11:48:38][INFO] logging.py:  99: json_stats: {"cur_iter": "558", "eta": "0:03:33", "split": "test_iter", "time_diff": 0.64811}
+[07/09 11:48:39][INFO] logging.py:  99: json_stats: {"cur_iter": "559", "eta": "0:03:31", "split": "test_iter", "time_diff": 0.64247}
+[07/09 11:48:40][INFO] logging.py:  99: json_stats: {"cur_iter": "560", "eta": "0:03:53", "split": "test_iter", "time_diff": 0.71276}
+[07/09 11:48:40][INFO] logging.py:  99: json_stats: {"cur_iter": "561", "eta": "0:03:29", "split": "test_iter", "time_diff": 0.64078}
+[07/09 11:48:41][INFO] logging.py:  99: json_stats: {"cur_iter": "562", "eta": "0:03:32", "split": "test_iter", "time_diff": 0.65209}
+[07/09 11:48:42][INFO] logging.py:  99: json_stats: {"cur_iter": "563", "eta": "0:03:28", "split": "test_iter", "time_diff": 0.64154}
+[07/09 11:48:42][INFO] logging.py:  99: json_stats: {"cur_iter": "564", "eta": "0:03:31", "split": "test_iter", "time_diff": 0.65164}
+[07/09 11:48:43][INFO] logging.py:  99: json_stats: {"cur_iter": "565", "eta": "0:03:30", "split": "test_iter", "time_diff": 0.65016}
+[07/09 11:48:44][INFO] logging.py:  99: json_stats: {"cur_iter": "566", "eta": "0:03:28", "split": "test_iter", "time_diff": 0.64691}
+[07/09 11:48:44][INFO] logging.py:  99: json_stats: {"cur_iter": "567", "eta": "0:03:27", "split": "test_iter", "time_diff": 0.64555}
+[07/09 11:48:45][INFO] logging.py:  99: json_stats: {"cur_iter": "568", "eta": "0:03:27", "split": "test_iter", "time_diff": 0.64734}
+[07/09 11:48:46][INFO] logging.py:  99: json_stats: {"cur_iter": "569", "eta": "0:03:24", "split": "test_iter", "time_diff": 0.64039}
+[07/09 11:48:47][INFO] logging.py:  99: json_stats: {"cur_iter": "570", "eta": "0:03:24", "split": "test_iter", "time_diff": 0.64305}
+[07/09 11:48:47][INFO] logging.py:  99: json_stats: {"cur_iter": "571", "eta": "0:03:36", "split": "test_iter", "time_diff": 0.68324}
+[07/09 11:48:48][INFO] logging.py:  99: json_stats: {"cur_iter": "572", "eta": "0:03:27", "split": "test_iter", "time_diff": 0.65571}
+[07/09 11:48:49][INFO] logging.py:  99: json_stats: {"cur_iter": "573", "eta": "0:03:29", "split": "test_iter", "time_diff": 0.66397}
+[07/09 11:48:49][INFO] logging.py:  99: json_stats: {"cur_iter": "574", "eta": "0:03:24", "split": "test_iter", "time_diff": 0.64979}
+[07/09 11:48:50][INFO] logging.py:  99: json_stats: {"cur_iter": "575", "eta": "0:03:26", "split": "test_iter", "time_diff": 0.65984}
+[07/09 11:48:51][INFO] logging.py:  99: json_stats: {"cur_iter": "576", "eta": "0:03:29", "split": "test_iter", "time_diff": 0.67031}
+[07/09 11:48:52][INFO] logging.py:  99: json_stats: {"cur_iter": "577", "eta": "0:03:20", "split": "test_iter", "time_diff": 0.64330}
+[07/09 11:48:52][INFO] logging.py:  99: json_stats: {"cur_iter": "578", "eta": "0:03:23", "split": "test_iter", "time_diff": 0.65677}
+[07/09 11:48:53][INFO] logging.py:  99: json_stats: {"cur_iter": "579", "eta": "0:03:18", "split": "test_iter", "time_diff": 0.64113}
+[07/09 11:48:54][INFO] logging.py:  99: json_stats: {"cur_iter": "580", "eta": "0:03:20", "split": "test_iter", "time_diff": 0.65178}
+[07/09 11:48:54][INFO] logging.py:  99: json_stats: {"cur_iter": "581", "eta": "0:03:17", "split": "test_iter", "time_diff": 0.64209}
+[07/09 11:48:55][INFO] logging.py:  99: json_stats: {"cur_iter": "582", "eta": "0:03:16", "split": "test_iter", "time_diff": 0.64077}
+[07/09 11:48:56][INFO] logging.py:  99: json_stats: {"cur_iter": "583", "eta": "0:03:15", "split": "test_iter", "time_diff": 0.64068}
+[07/09 11:48:57][INFO] logging.py:  99: json_stats: {"cur_iter": "584", "eta": "0:03:14", "split": "test_iter", "time_diff": 0.64130}
+[07/09 11:48:57][INFO] logging.py:  99: json_stats: {"cur_iter": "585", "eta": "0:03:16", "split": "test_iter", "time_diff": 0.64794}
+[07/09 11:48:58][INFO] logging.py:  99: json_stats: {"cur_iter": "586", "eta": "0:03:13", "split": "test_iter", "time_diff": 0.64155}
+[07/09 11:48:59][INFO] logging.py:  99: json_stats: {"cur_iter": "587", "eta": "0:03:29", "split": "test_iter", "time_diff": 0.69456}
+[07/09 11:48:59][INFO] logging.py:  99: json_stats: {"cur_iter": "588", "eta": "0:03:14", "split": "test_iter", "time_diff": 0.64802}
+[07/09 11:49:00][INFO] logging.py:  99: json_stats: {"cur_iter": "589", "eta": "0:03:11", "split": "test_iter", "time_diff": 0.64099}
+[07/09 11:49:01][INFO] logging.py:  99: json_stats: {"cur_iter": "590", "eta": "0:03:10", "split": "test_iter", "time_diff": 0.64000}
+[07/09 11:49:02][INFO] logging.py:  99: json_stats: {"cur_iter": "591", "eta": "0:03:10", "split": "test_iter", "time_diff": 0.64161}
+[07/09 11:49:02][INFO] logging.py:  99: json_stats: {"cur_iter": "592", "eta": "0:03:13", "split": "test_iter", "time_diff": 0.65515}
+[07/09 11:49:03][INFO] logging.py:  99: json_stats: {"cur_iter": "593", "eta": "0:03:12", "split": "test_iter", "time_diff": 0.65147}
+[07/09 11:49:04][INFO] logging.py:  99: json_stats: {"cur_iter": "594", "eta": "0:03:08", "split": "test_iter", "time_diff": 0.64098}
+[07/09 11:49:04][INFO] logging.py:  99: json_stats: {"cur_iter": "595", "eta": "0:03:08", "split": "test_iter", "time_diff": 0.64269}
+[07/09 11:49:05][INFO] logging.py:  99: json_stats: {"cur_iter": "596", "eta": "0:03:07", "split": "test_iter", "time_diff": 0.64179}
+[07/09 11:49:06][INFO] logging.py:  99: json_stats: {"cur_iter": "597", "eta": "0:03:11", "split": "test_iter", "time_diff": 0.65854}
+[07/09 11:49:07][INFO] logging.py:  99: json_stats: {"cur_iter": "598", "eta": "0:03:11", "split": "test_iter", "time_diff": 0.66103}
+[07/09 11:49:07][INFO] logging.py:  99: json_stats: {"cur_iter": "599", "eta": "0:03:06", "split": "test_iter", "time_diff": 0.64487}
+[07/09 11:49:08][INFO] logging.py:  99: json_stats: {"cur_iter": "600", "eta": "0:03:04", "split": "test_iter", "time_diff": 0.64162}
+[07/09 11:49:09][INFO] logging.py:  99: json_stats: {"cur_iter": "601", "eta": "0:03:10", "split": "test_iter", "time_diff": 0.66518}
+[07/09 11:49:09][INFO] logging.py:  99: json_stats: {"cur_iter": "602", "eta": "0:03:24", "split": "test_iter", "time_diff": 0.71346}
+[07/09 11:49:10][INFO] logging.py:  99: json_stats: {"cur_iter": "603", "eta": "0:03:02", "split": "test_iter", "time_diff": 0.64187}
+[07/09 11:49:11][INFO] logging.py:  99: json_stats: {"cur_iter": "604", "eta": "0:03:04", "split": "test_iter", "time_diff": 0.65124}
+[07/09 11:49:12][INFO] logging.py:  99: json_stats: {"cur_iter": "605", "eta": "0:03:08", "split": "test_iter", "time_diff": 0.66767}
+[07/09 11:49:12][INFO] logging.py:  99: json_stats: {"cur_iter": "606", "eta": "0:03:02", "split": "test_iter", "time_diff": 0.64606}
+[07/09 11:49:13][INFO] logging.py:  99: json_stats: {"cur_iter": "607", "eta": "0:03:01", "split": "test_iter", "time_diff": 0.64690}
+[07/09 11:49:14][INFO] logging.py:  99: json_stats: {"cur_iter": "608", "eta": "0:02:59", "split": "test_iter", "time_diff": 0.64199}
+[07/09 11:49:14][INFO] logging.py:  99: json_stats: {"cur_iter": "609", "eta": "0:03:03", "split": "test_iter", "time_diff": 0.65936}
+[07/09 11:49:15][INFO] logging.py:  99: json_stats: {"cur_iter": "610", "eta": "0:02:58", "split": "test_iter", "time_diff": 0.64220}
+[07/09 11:49:16][INFO] logging.py:  99: json_stats: {"cur_iter": "611", "eta": "0:02:57", "split": "test_iter", "time_diff": 0.64140}
+[07/09 11:49:16][INFO] logging.py:  99: json_stats: {"cur_iter": "612", "eta": "0:02:57", "split": "test_iter", "time_diff": 0.64160}
+[07/09 11:49:17][INFO] logging.py:  99: json_stats: {"cur_iter": "613", "eta": "0:02:58", "split": "test_iter", "time_diff": 0.64949}
+[07/09 11:49:18][INFO] logging.py:  99: json_stats: {"cur_iter": "614", "eta": "0:02:57", "split": "test_iter", "time_diff": 0.64758}
+[07/09 11:49:19][INFO] logging.py:  99: json_stats: {"cur_iter": "615", "eta": "0:02:57", "split": "test_iter", "time_diff": 0.64952}
+[07/09 11:49:19][INFO] logging.py:  99: json_stats: {"cur_iter": "616", "eta": "0:02:55", "split": "test_iter", "time_diff": 0.64682}
+[07/09 11:49:20][INFO] logging.py:  99: json_stats: {"cur_iter": "617", "eta": "0:02:53", "split": "test_iter", "time_diff": 0.64132}
+[07/09 11:49:21][INFO] logging.py:  99: json_stats: {"cur_iter": "618", "eta": "0:02:53", "split": "test_iter", "time_diff": 0.64244}
+[07/09 11:49:21][INFO] logging.py:  99: json_stats: {"cur_iter": "619", "eta": "0:02:52", "split": "test_iter", "time_diff": 0.64133}
+[07/09 11:49:22][INFO] logging.py:  99: json_stats: {"cur_iter": "620", "eta": "0:02:54", "split": "test_iter", "time_diff": 0.64930}
+[07/09 11:49:23][INFO] logging.py:  99: json_stats: {"cur_iter": "621", "eta": "0:02:51", "split": "test_iter", "time_diff": 0.64181}
+[07/09 11:49:24][INFO] logging.py:  99: json_stats: {"cur_iter": "622", "eta": "0:02:55", "split": "test_iter", "time_diff": 0.66145}
+[07/09 11:49:24][INFO] logging.py:  99: json_stats: {"cur_iter": "623", "eta": "0:03:01", "split": "test_iter", "time_diff": 0.68398}
+[07/09 11:49:25][INFO] logging.py:  99: json_stats: {"cur_iter": "624", "eta": "0:02:49", "split": "test_iter", "time_diff": 0.64207}
+[07/09 11:49:26][INFO] logging.py:  99: json_stats: {"cur_iter": "625", "eta": "0:02:48", "split": "test_iter", "time_diff": 0.64146}
+[07/09 11:49:26][INFO] logging.py:  99: json_stats: {"cur_iter": "626", "eta": "0:02:47", "split": "test_iter", "time_diff": 0.64107}
+[07/09 11:49:27][INFO] logging.py:  99: json_stats: {"cur_iter": "627", "eta": "0:02:47", "split": "test_iter", "time_diff": 0.64140}
+[07/09 11:49:28][INFO] logging.py:  99: json_stats: {"cur_iter": "628", "eta": "0:02:49", "split": "test_iter", "time_diff": 0.65079}
+[07/09 11:49:29][INFO] logging.py:  99: json_stats: {"cur_iter": "629", "eta": "0:02:46", "split": "test_iter", "time_diff": 0.64100}
+[07/09 11:49:29][INFO] logging.py:  99: json_stats: {"cur_iter": "630", "eta": "0:02:45", "split": "test_iter", "time_diff": 0.64182}
+[07/09 11:49:30][INFO] logging.py:  99: json_stats: {"cur_iter": "631", "eta": "0:02:47", "split": "test_iter", "time_diff": 0.65063}
+[07/09 11:49:31][INFO] logging.py:  99: json_stats: {"cur_iter": "632", "eta": "0:02:44", "split": "test_iter", "time_diff": 0.64224}
+[07/09 11:49:31][INFO] logging.py:  99: json_stats: {"cur_iter": "633", "eta": "0:02:43", "split": "test_iter", "time_diff": 0.64129}
+[07/09 11:49:32][INFO] logging.py:  99: json_stats: {"cur_iter": "634", "eta": "0:02:44", "split": "test_iter", "time_diff": 0.64674}
+[07/09 11:49:33][INFO] logging.py:  99: json_stats: {"cur_iter": "635", "eta": "0:03:09", "split": "test_iter", "time_diff": 0.74733}
+[07/09 11:49:34][INFO] logging.py:  99: json_stats: {"cur_iter": "636", "eta": "0:02:41", "split": "test_iter", "time_diff": 0.64226}
+[07/09 11:49:34][INFO] logging.py:  99: json_stats: {"cur_iter": "637", "eta": "0:02:40", "split": "test_iter", "time_diff": 0.64125}
+[07/09 11:49:35][INFO] logging.py:  99: json_stats: {"cur_iter": "638", "eta": "0:02:40", "split": "test_iter", "time_diff": 0.64073}
+[07/09 11:49:36][INFO] logging.py:  99: json_stats: {"cur_iter": "639", "eta": "0:02:43", "split": "test_iter", "time_diff": 0.65609}
+[07/09 11:49:37][INFO] logging.py:  99: json_stats: {"cur_iter": "640", "eta": "0:02:39", "split": "test_iter", "time_diff": 0.64274}
+[07/09 11:49:37][INFO] logging.py:  99: json_stats: {"cur_iter": "641", "eta": "0:02:42", "split": "test_iter", "time_diff": 0.65872}
+[07/09 11:49:38][INFO] logging.py:  99: json_stats: {"cur_iter": "642", "eta": "0:02:38", "split": "test_iter", "time_diff": 0.64426}
+[07/09 11:49:39][INFO] logging.py:  99: json_stats: {"cur_iter": "643", "eta": "0:02:37", "split": "test_iter", "time_diff": 0.64148}
+[07/09 11:49:39][INFO] logging.py:  99: json_stats: {"cur_iter": "644", "eta": "0:02:36", "split": "test_iter", "time_diff": 0.64065}
+[07/09 11:49:40][INFO] logging.py:  99: json_stats: {"cur_iter": "645", "eta": "0:02:35", "split": "test_iter", "time_diff": 0.64121}
+[07/09 11:49:41][INFO] logging.py:  99: json_stats: {"cur_iter": "646", "eta": "0:02:35", "split": "test_iter", "time_diff": 0.64293}
+[07/09 11:49:41][INFO] logging.py:  99: json_stats: {"cur_iter": "647", "eta": "0:02:34", "split": "test_iter", "time_diff": 0.64154}
+[07/09 11:49:42][INFO] logging.py:  99: json_stats: {"cur_iter": "648", "eta": "0:02:34", "split": "test_iter", "time_diff": 0.64176}
+[07/09 11:49:43][INFO] logging.py:  99: json_stats: {"cur_iter": "649", "eta": "0:02:32", "split": "test_iter", "time_diff": 0.63970}
+[07/09 11:49:44][INFO] logging.py:  99: json_stats: {"cur_iter": "650", "eta": "0:02:33", "split": "test_iter", "time_diff": 0.64543}
+[07/09 11:49:44][INFO] logging.py:  99: json_stats: {"cur_iter": "651", "eta": "0:02:33", "split": "test_iter", "time_diff": 0.64617}
+[07/09 11:49:45][INFO] logging.py:  99: json_stats: {"cur_iter": "652", "eta": "0:02:32", "split": "test_iter", "time_diff": 0.64703}
+[07/09 11:49:46][INFO] logging.py:  99: json_stats: {"cur_iter": "653", "eta": "0:02:30", "split": "test_iter", "time_diff": 0.64171}
+[07/09 11:49:46][INFO] logging.py:  99: json_stats: {"cur_iter": "654", "eta": "0:02:31", "split": "test_iter", "time_diff": 0.64633}
+[07/09 11:49:47][INFO] logging.py:  99: json_stats: {"cur_iter": "655", "eta": "0:02:29", "split": "test_iter", "time_diff": 0.64266}
+[07/09 11:49:48][INFO] logging.py:  99: json_stats: {"cur_iter": "656", "eta": "0:02:28", "split": "test_iter", "time_diff": 0.64165}
+[07/09 11:49:49][INFO] logging.py:  99: json_stats: {"cur_iter": "657", "eta": "0:02:28", "split": "test_iter", "time_diff": 0.64177}
+[07/09 11:49:49][INFO] logging.py:  99: json_stats: {"cur_iter": "658", "eta": "0:02:27", "split": "test_iter", "time_diff": 0.64153}
+[07/09 11:49:50][INFO] logging.py:  99: json_stats: {"cur_iter": "659", "eta": "0:02:26", "split": "test_iter", "time_diff": 0.64110}
+[07/09 11:49:51][INFO] logging.py:  99: json_stats: {"cur_iter": "660", "eta": "0:02:28", "split": "test_iter", "time_diff": 0.65097}
+[07/09 11:49:51][INFO] logging.py:  99: json_stats: {"cur_iter": "661", "eta": "0:02:35", "split": "test_iter", "time_diff": 0.68336}
+[07/09 11:49:52][INFO] logging.py:  99: json_stats: {"cur_iter": "662", "eta": "0:02:28", "split": "test_iter", "time_diff": 0.65693}
+[07/09 11:49:53][INFO] logging.py:  99: json_stats: {"cur_iter": "663", "eta": "0:02:27", "split": "test_iter", "time_diff": 0.65418}
+[07/09 11:49:54][INFO] logging.py:  99: json_stats: {"cur_iter": "664", "eta": "0:02:25", "split": "test_iter", "time_diff": 0.64756}
+[07/09 11:49:54][INFO] logging.py:  99: json_stats: {"cur_iter": "665", "eta": "0:02:25", "split": "test_iter", "time_diff": 0.65265}
+[07/09 11:49:55][INFO] logging.py:  99: json_stats: {"cur_iter": "666", "eta": "0:02:22", "split": "test_iter", "time_diff": 0.64052}
+[07/09 11:49:56][INFO] logging.py:  99: json_stats: {"cur_iter": "667", "eta": "0:02:21", "split": "test_iter", "time_diff": 0.64120}
+[07/09 11:49:56][INFO] logging.py:  99: json_stats: {"cur_iter": "668", "eta": "0:02:21", "split": "test_iter", "time_diff": 0.64152}
+[07/09 11:49:57][INFO] logging.py:  99: json_stats: {"cur_iter": "669", "eta": "0:02:20", "split": "test_iter", "time_diff": 0.64158}
+[07/09 11:49:58][INFO] logging.py:  99: json_stats: {"cur_iter": "670", "eta": "0:02:31", "split": "test_iter", "time_diff": 0.69507}
+[07/09 11:49:58][INFO] logging.py:  99: json_stats: {"cur_iter": "671", "eta": "0:02:19", "split": "test_iter", "time_diff": 0.64188}
+[07/09 11:49:59][INFO] logging.py:  99: json_stats: {"cur_iter": "672", "eta": "0:02:18", "split": "test_iter", "time_diff": 0.64154}
+[07/09 11:50:00][INFO] logging.py:  99: json_stats: {"cur_iter": "673", "eta": "0:02:17", "split": "test_iter", "time_diff": 0.64157}
+[07/09 11:50:01][INFO] logging.py:  99: json_stats: {"cur_iter": "674", "eta": "0:02:18", "split": "test_iter", "time_diff": 0.64931}
+[07/09 11:50:01][INFO] logging.py:  99: json_stats: {"cur_iter": "675", "eta": "0:02:16", "split": "test_iter", "time_diff": 0.64170}
+[07/09 11:50:02][INFO] logging.py:  99: json_stats: {"cur_iter": "676", "eta": "0:02:16", "split": "test_iter", "time_diff": 0.64339}
+[07/09 11:50:03][INFO] logging.py:  99: json_stats: {"cur_iter": "677", "eta": "0:02:16", "split": "test_iter", "time_diff": 0.64572}
+[07/09 11:50:03][INFO] logging.py:  99: json_stats: {"cur_iter": "678", "eta": "0:02:17", "split": "test_iter", "time_diff": 0.65280}
+[07/09 11:50:04][INFO] logging.py:  99: json_stats: {"cur_iter": "679", "eta": "0:02:14", "split": "test_iter", "time_diff": 0.64264}
+[07/09 11:50:05][INFO] logging.py:  99: json_stats: {"cur_iter": "680", "eta": "0:02:13", "split": "test_iter", "time_diff": 0.64264}
+[07/09 11:50:06][INFO] logging.py:  99: json_stats: {"cur_iter": "681", "eta": "0:02:12", "split": "test_iter", "time_diff": 0.64076}
+[07/09 11:50:06][INFO] logging.py:  99: json_stats: {"cur_iter": "682", "eta": "0:02:11", "split": "test_iter", "time_diff": 0.64020}
+[07/09 11:50:07][INFO] logging.py:  99: json_stats: {"cur_iter": "683", "eta": "0:02:15", "split": "test_iter", "time_diff": 0.65856}
+[07/09 11:50:08][INFO] logging.py:  99: json_stats: {"cur_iter": "684", "eta": "0:02:11", "split": "test_iter", "time_diff": 0.64622}
+[07/09 11:50:08][INFO] logging.py:  99: json_stats: {"cur_iter": "685", "eta": "0:02:10", "split": "test_iter", "time_diff": 0.64131}
+[07/09 11:50:09][INFO] logging.py:  99: json_stats: {"cur_iter": "686", "eta": "0:02:09", "split": "test_iter", "time_diff": 0.64110}
+[07/09 11:50:10][INFO] logging.py:  99: json_stats: {"cur_iter": "687", "eta": "0:02:09", "split": "test_iter", "time_diff": 0.64185}
+[07/09 11:50:10][INFO] logging.py:  99: json_stats: {"cur_iter": "688", "eta": "0:02:10", "split": "test_iter", "time_diff": 0.65486}
+[07/09 11:50:11][INFO] logging.py:  99: json_stats: {"cur_iter": "689", "eta": "0:02:22", "split": "test_iter", "time_diff": 0.71543}
+[07/09 11:50:12][INFO] logging.py:  99: json_stats: {"cur_iter": "690", "eta": "0:02:07", "split": "test_iter", "time_diff": 0.64328}
+[07/09 11:50:13][INFO] logging.py:  99: json_stats: {"cur_iter": "691", "eta": "0:02:14", "split": "test_iter", "time_diff": 0.68030}
+[07/09 11:50:13][INFO] logging.py:  99: json_stats: {"cur_iter": "692", "eta": "0:02:07", "split": "test_iter", "time_diff": 0.65284}
+[07/09 11:50:14][INFO] logging.py:  99: json_stats: {"cur_iter": "693", "eta": "0:02:05", "split": "test_iter", "time_diff": 0.64112}
+[07/09 11:50:15][INFO] logging.py:  99: json_stats: {"cur_iter": "694", "eta": "0:02:05", "split": "test_iter", "time_diff": 0.64495}
+[07/09 11:50:15][INFO] logging.py:  99: json_stats: {"cur_iter": "695", "eta": "0:02:03", "split": "test_iter", "time_diff": 0.64105}
+[07/09 11:50:16][INFO] logging.py:  99: json_stats: {"cur_iter": "696", "eta": "0:02:03", "split": "test_iter", "time_diff": 0.64264}
+[07/09 11:50:17][INFO] logging.py:  99: json_stats: {"cur_iter": "697", "eta": "0:02:02", "split": "test_iter", "time_diff": 0.64017}
+[07/09 11:50:18][INFO] logging.py:  99: json_stats: {"cur_iter": "698", "eta": "0:02:02", "split": "test_iter", "time_diff": 0.64313}
+[07/09 11:50:18][INFO] logging.py:  99: json_stats: {"cur_iter": "699", "eta": "0:02:02", "split": "test_iter", "time_diff": 0.65050}
+[07/09 11:50:19][INFO] logging.py:  99: json_stats: {"cur_iter": "700", "eta": "0:02:09", "split": "test_iter", "time_diff": 0.68827}
+[07/09 11:50:20][INFO] logging.py:  99: json_stats: {"cur_iter": "701", "eta": "0:02:01", "split": "test_iter", "time_diff": 0.64807}
+[07/09 11:50:20][INFO] logging.py:  99: json_stats: {"cur_iter": "702", "eta": "0:02:08", "split": "test_iter", "time_diff": 0.69125}
+[07/09 11:50:21][INFO] logging.py:  99: json_stats: {"cur_iter": "703", "eta": "0:02:00", "split": "test_iter", "time_diff": 0.65062}
+[07/09 11:50:22][INFO] logging.py:  99: json_stats: {"cur_iter": "704", "eta": "0:01:57", "split": "test_iter", "time_diff": 0.63998}
+[07/09 11:50:23][INFO] logging.py:  99: json_stats: {"cur_iter": "705", "eta": "0:01:57", "split": "test_iter", "time_diff": 0.64123}
+[07/09 11:50:23][INFO] logging.py:  99: json_stats: {"cur_iter": "706", "eta": "0:01:56", "split": "test_iter", "time_diff": 0.64051}
+[07/09 11:50:24][INFO] logging.py:  99: json_stats: {"cur_iter": "707", "eta": "0:01:56", "split": "test_iter", "time_diff": 0.64099}
+[07/09 11:50:25][INFO] logging.py:  99: json_stats: {"cur_iter": "708", "eta": "0:01:55", "split": "test_iter", "time_diff": 0.64211}
+[07/09 11:50:25][INFO] logging.py:  99: json_stats: {"cur_iter": "709", "eta": "0:01:55", "split": "test_iter", "time_diff": 0.64635}
+[07/09 11:50:26][INFO] logging.py:  99: json_stats: {"cur_iter": "710", "eta": "0:01:54", "split": "test_iter", "time_diff": 0.64057}
+[07/09 11:50:27][INFO] logging.py:  99: json_stats: {"cur_iter": "711", "eta": "0:01:54", "split": "test_iter", "time_diff": 0.64790}
+[07/09 11:50:28][INFO] logging.py:  99: json_stats: {"cur_iter": "712", "eta": "0:01:57", "split": "test_iter", "time_diff": 0.66862}
+[07/09 11:50:28][INFO] logging.py:  99: json_stats: {"cur_iter": "713", "eta": "0:01:56", "split": "test_iter", "time_diff": 0.66445}
+[07/09 11:50:29][INFO] logging.py:  99: json_stats: {"cur_iter": "714", "eta": "0:01:52", "split": "test_iter", "time_diff": 0.64716}
+[07/09 11:50:30][INFO] logging.py:  99: json_stats: {"cur_iter": "715", "eta": "0:01:50", "split": "test_iter", "time_diff": 0.64143}
+[07/09 11:50:30][INFO] logging.py:  99: json_stats: {"cur_iter": "716", "eta": "0:01:50", "split": "test_iter", "time_diff": 0.64111}
+[07/09 11:50:31][INFO] logging.py:  99: json_stats: {"cur_iter": "717", "eta": "0:01:49", "split": "test_iter", "time_diff": 0.64133}
+[07/09 11:50:32][INFO] logging.py:  99: json_stats: {"cur_iter": "718", "eta": "0:01:48", "split": "test_iter", "time_diff": 0.64111}
+[07/09 11:50:32][INFO] logging.py:  99: json_stats: {"cur_iter": "719", "eta": "0:01:48", "split": "test_iter", "time_diff": 0.64100}
+[07/09 11:50:33][INFO] logging.py:  99: json_stats: {"cur_iter": "720", "eta": "0:01:47", "split": "test_iter", "time_diff": 0.64104}
+[07/09 11:50:34][INFO] logging.py:  99: json_stats: {"cur_iter": "721", "eta": "0:01:47", "split": "test_iter", "time_diff": 0.64313}
+[07/09 11:50:35][INFO] logging.py:  99: json_stats: {"cur_iter": "722", "eta": "0:01:46", "split": "test_iter", "time_diff": 0.64128}
+[07/09 11:50:35][INFO] logging.py:  99: json_stats: {"cur_iter": "723", "eta": "0:01:45", "split": "test_iter", "time_diff": 0.64089}
+[07/09 11:50:36][INFO] logging.py:  99: json_stats: {"cur_iter": "724", "eta": "0:01:45", "split": "test_iter", "time_diff": 0.64151}
+[07/09 11:50:37][INFO] logging.py:  99: json_stats: {"cur_iter": "725", "eta": "0:01:52", "split": "test_iter", "time_diff": 0.69079}
+[07/09 11:50:37][INFO] logging.py:  99: json_stats: {"cur_iter": "726", "eta": "0:01:49", "split": "test_iter", "time_diff": 0.67367}
+[07/09 11:50:38][INFO] logging.py:  99: json_stats: {"cur_iter": "727", "eta": "0:01:43", "split": "test_iter", "time_diff": 0.64452}
+[07/09 11:50:39][INFO] logging.py:  99: json_stats: {"cur_iter": "728", "eta": "0:01:44", "split": "test_iter", "time_diff": 0.65033}
+[07/09 11:50:40][INFO] logging.py:  99: json_stats: {"cur_iter": "729", "eta": "0:01:42", "split": "test_iter", "time_diff": 0.64713}
+[07/09 11:50:40][INFO] logging.py:  99: json_stats: {"cur_iter": "730", "eta": "0:01:45", "split": "test_iter", "time_diff": 0.66836}
+[07/09 11:50:41][INFO] logging.py:  99: json_stats: {"cur_iter": "731", "eta": "0:01:40", "split": "test_iter", "time_diff": 0.64021}
+[07/09 11:50:42][INFO] logging.py:  99: json_stats: {"cur_iter": "732", "eta": "0:01:40", "split": "test_iter", "time_diff": 0.64111}
+[07/09 11:50:42][INFO] logging.py:  99: json_stats: {"cur_iter": "733", "eta": "0:01:39", "split": "test_iter", "time_diff": 0.64122}
+[07/09 11:50:43][INFO] logging.py:  99: json_stats: {"cur_iter": "734", "eta": "0:01:41", "split": "test_iter", "time_diff": 0.65890}
+[07/09 11:50:44][INFO] logging.py:  99: json_stats: {"cur_iter": "735", "eta": "0:01:38", "split": "test_iter", "time_diff": 0.64164}
+[07/09 11:50:45][INFO] logging.py:  99: json_stats: {"cur_iter": "736", "eta": "0:01:37", "split": "test_iter", "time_diff": 0.64184}
+[07/09 11:50:45][INFO] logging.py:  99: json_stats: {"cur_iter": "737", "eta": "0:01:37", "split": "test_iter", "time_diff": 0.64560}
+[07/09 11:50:46][INFO] logging.py:  99: json_stats: {"cur_iter": "738", "eta": "0:01:38", "split": "test_iter", "time_diff": 0.65404}
+[07/09 11:50:47][INFO] logging.py:  99: json_stats: {"cur_iter": "739", "eta": "0:01:35", "split": "test_iter", "time_diff": 0.64093}
+[07/09 11:50:47][INFO] logging.py:  99: json_stats: {"cur_iter": "740", "eta": "0:01:34", "split": "test_iter", "time_diff": 0.64121}
+[07/09 11:50:48][INFO] logging.py:  99: json_stats: {"cur_iter": "741", "eta": "0:01:34", "split": "test_iter", "time_diff": 0.64027}
+[07/09 11:50:49][INFO] logging.py:  99: json_stats: {"cur_iter": "742", "eta": "0:01:33", "split": "test_iter", "time_diff": 0.63982}
+[07/09 11:50:50][INFO] logging.py:  99: json_stats: {"cur_iter": "743", "eta": "0:01:32", "split": "test_iter", "time_diff": 0.64099}
+[07/09 11:50:50][INFO] logging.py:  99: json_stats: {"cur_iter": "744", "eta": "0:01:32", "split": "test_iter", "time_diff": 0.64079}
+[07/09 11:50:51][INFO] logging.py:  99: json_stats: {"cur_iter": "745", "eta": "0:01:31", "split": "test_iter", "time_diff": 0.64144}
+[07/09 11:50:52][INFO] logging.py:  99: json_stats: {"cur_iter": "746", "eta": "0:01:32", "split": "test_iter", "time_diff": 0.64812}
+[07/09 11:50:52][INFO] logging.py:  99: json_stats: {"cur_iter": "747", "eta": "0:01:30", "split": "test_iter", "time_diff": 0.64032}
+[07/09 11:50:53][INFO] logging.py:  99: json_stats: {"cur_iter": "748", "eta": "0:01:31", "split": "test_iter", "time_diff": 0.65560}
+[07/09 11:50:54][INFO] logging.py:  99: json_stats: {"cur_iter": "749", "eta": "0:01:29", "split": "test_iter", "time_diff": 0.64086}
+[07/09 11:50:55][INFO] logging.py:  99: json_stats: {"cur_iter": "750", "eta": "0:01:28", "split": "test_iter", "time_diff": 0.63983}
+[07/09 11:50:55][INFO] logging.py:  99: json_stats: {"cur_iter": "751", "eta": "0:01:28", "split": "test_iter", "time_diff": 0.64405}
+[07/09 11:50:56][INFO] logging.py:  99: json_stats: {"cur_iter": "752", "eta": "0:01:28", "split": "test_iter", "time_diff": 0.65051}
+[07/09 11:50:57][INFO] logging.py:  99: json_stats: {"cur_iter": "753", "eta": "0:01:27", "split": "test_iter", "time_diff": 0.65178}
+[07/09 11:50:57][INFO] logging.py:  99: json_stats: {"cur_iter": "754", "eta": "0:01:27", "split": "test_iter", "time_diff": 0.64994}
+[07/09 11:50:58][INFO] logging.py:  99: json_stats: {"cur_iter": "755", "eta": "0:01:25", "split": "test_iter", "time_diff": 0.64174}
+[07/09 11:50:59][INFO] logging.py:  99: json_stats: {"cur_iter": "756", "eta": "0:01:24", "split": "test_iter", "time_diff": 0.64168}
+[07/09 11:51:00][INFO] logging.py:  99: json_stats: {"cur_iter": "757", "eta": "0:01:23", "split": "test_iter", "time_diff": 0.64014}
+[07/09 11:51:00][INFO] logging.py:  99: json_stats: {"cur_iter": "758", "eta": "0:01:31", "split": "test_iter", "time_diff": 0.70518}
+[07/09 11:51:01][INFO] logging.py:  99: json_stats: {"cur_iter": "759", "eta": "0:01:23", "split": "test_iter", "time_diff": 0.64826}
+[07/09 11:51:02][INFO] logging.py:  99: json_stats: {"cur_iter": "760", "eta": "0:01:23", "split": "test_iter", "time_diff": 0.64852}
+[07/09 11:51:02][INFO] logging.py:  99: json_stats: {"cur_iter": "761", "eta": "0:01:21", "split": "test_iter", "time_diff": 0.64492}
+[07/09 11:51:03][INFO] logging.py:  99: json_stats: {"cur_iter": "762", "eta": "0:01:20", "split": "test_iter", "time_diff": 0.64134}
+[07/09 11:51:04][INFO] logging.py:  99: json_stats: {"cur_iter": "763", "eta": "0:01:20", "split": "test_iter", "time_diff": 0.64112}
+[07/09 11:51:05][INFO] logging.py:  99: json_stats: {"cur_iter": "764", "eta": "0:01:19", "split": "test_iter", "time_diff": 0.64042}
+[07/09 11:51:05][INFO] logging.py:  99: json_stats: {"cur_iter": "765", "eta": "0:01:18", "split": "test_iter", "time_diff": 0.64165}
+[07/09 11:51:06][INFO] logging.py:  99: json_stats: {"cur_iter": "766", "eta": "0:01:18", "split": "test_iter", "time_diff": 0.64297}
+[07/09 11:51:07][INFO] logging.py:  99: json_stats: {"cur_iter": "767", "eta": "0:01:17", "split": "test_iter", "time_diff": 0.64201}
+[07/09 11:51:07][INFO] logging.py:  99: json_stats: {"cur_iter": "768", "eta": "0:01:16", "split": "test_iter", "time_diff": 0.64132}
+[07/09 11:51:08][INFO] logging.py:  99: json_stats: {"cur_iter": "769", "eta": "0:01:16", "split": "test_iter", "time_diff": 0.64282}
+[07/09 11:51:09][INFO] logging.py:  99: json_stats: {"cur_iter": "770", "eta": "0:01:20", "split": "test_iter", "time_diff": 0.68355}
+[07/09 11:51:09][INFO] logging.py:  99: json_stats: {"cur_iter": "771", "eta": "0:01:24", "split": "test_iter", "time_diff": 0.72204}
+[07/09 11:51:10][INFO] logging.py:  99: json_stats: {"cur_iter": "772", "eta": "0:01:16", "split": "test_iter", "time_diff": 0.66046}
+[07/09 11:51:11][INFO] logging.py:  99: json_stats: {"cur_iter": "773", "eta": "0:01:13", "split": "test_iter", "time_diff": 0.64053}
+[07/09 11:51:12][INFO] logging.py:  99: json_stats: {"cur_iter": "774", "eta": "0:01:13", "split": "test_iter", "time_diff": 0.64056}
+[07/09 11:51:12][INFO] logging.py:  99: json_stats: {"cur_iter": "775", "eta": "0:01:15", "split": "test_iter", "time_diff": 0.66383}
+[07/09 11:51:13][INFO] logging.py:  99: json_stats: {"cur_iter": "776", "eta": "0:01:11", "split": "test_iter", "time_diff": 0.63992}
+[07/09 11:51:14][INFO] logging.py:  99: json_stats: {"cur_iter": "777", "eta": "0:01:11", "split": "test_iter", "time_diff": 0.64298}
+[07/09 11:51:14][INFO] logging.py:  99: json_stats: {"cur_iter": "778", "eta": "0:01:10", "split": "test_iter", "time_diff": 0.64028}
+[07/09 11:51:15][INFO] logging.py:  99: json_stats: {"cur_iter": "779", "eta": "0:01:10", "split": "test_iter", "time_diff": 0.64543}
+[07/09 11:51:16][INFO] logging.py:  99: json_stats: {"cur_iter": "780", "eta": "0:01:10", "split": "test_iter", "time_diff": 0.64981}
+[07/09 11:51:17][INFO] logging.py:  99: json_stats: {"cur_iter": "781", "eta": "0:01:14", "split": "test_iter", "time_diff": 0.69431}
+[07/09 11:51:17][INFO] logging.py:  99: json_stats: {"cur_iter": "782", "eta": "0:01:08", "split": "test_iter", "time_diff": 0.64402}
+[07/09 11:51:18][INFO] logging.py:  99: json_stats: {"cur_iter": "783", "eta": "0:01:07", "split": "test_iter", "time_diff": 0.64123}
+[07/09 11:51:19][INFO] logging.py:  99: json_stats: {"cur_iter": "784", "eta": "0:01:06", "split": "test_iter", "time_diff": 0.64116}
+[07/09 11:51:19][INFO] logging.py:  99: json_stats: {"cur_iter": "785", "eta": "0:01:06", "split": "test_iter", "time_diff": 0.64085}
+[07/09 11:51:20][INFO] logging.py:  99: json_stats: {"cur_iter": "786", "eta": "0:01:05", "split": "test_iter", "time_diff": 0.64059}
+[07/09 11:51:21][INFO] logging.py:  99: json_stats: {"cur_iter": "787", "eta": "0:01:04", "split": "test_iter", "time_diff": 0.64114}
+[07/09 11:51:22][INFO] logging.py:  99: json_stats: {"cur_iter": "788", "eta": "0:01:04", "split": "test_iter", "time_diff": 0.64401}
+[07/09 11:51:22][INFO] logging.py:  99: json_stats: {"cur_iter": "789", "eta": "0:01:05", "split": "test_iter", "time_diff": 0.65712}
+[07/09 11:51:23][INFO] logging.py:  99: json_stats: {"cur_iter": "790", "eta": "0:01:02", "split": "test_iter", "time_diff": 0.64116}
+[07/09 11:51:24][INFO] logging.py:  99: json_stats: {"cur_iter": "791", "eta": "0:01:05", "split": "test_iter", "time_diff": 0.67369}
+[07/09 11:51:24][INFO] logging.py:  99: json_stats: {"cur_iter": "792", "eta": "0:01:02", "split": "test_iter", "time_diff": 0.64747}
+[07/09 11:51:25][INFO] logging.py:  99: json_stats: {"cur_iter": "793", "eta": "0:01:00", "split": "test_iter", "time_diff": 0.64167}
+[07/09 11:51:26][INFO] logging.py:  99: json_stats: {"cur_iter": "794", "eta": "0:01:00", "split": "test_iter", "time_diff": 0.64050}
+[07/09 11:51:27][INFO] logging.py:  99: json_stats: {"cur_iter": "795", "eta": "0:00:59", "split": "test_iter", "time_diff": 0.64072}
+[07/09 11:51:27][INFO] logging.py:  99: json_stats: {"cur_iter": "796", "eta": "0:00:58", "split": "test_iter", "time_diff": 0.64045}
+[07/09 11:51:28][INFO] logging.py:  99: json_stats: {"cur_iter": "797", "eta": "0:00:59", "split": "test_iter", "time_diff": 0.65208}
+[07/09 11:51:29][INFO] logging.py:  99: json_stats: {"cur_iter": "798", "eta": "0:00:58", "split": "test_iter", "time_diff": 0.64505}
+[07/09 11:51:29][INFO] logging.py:  99: json_stats: {"cur_iter": "799", "eta": "0:00:57", "split": "test_iter", "time_diff": 0.64687}
+[07/09 11:51:30][INFO] logging.py:  99: json_stats: {"cur_iter": "800", "eta": "0:00:56", "split": "test_iter", "time_diff": 0.64001}
+[07/09 11:51:31][INFO] logging.py:  99: json_stats: {"cur_iter": "801", "eta": "0:00:55", "split": "test_iter", "time_diff": 0.64115}
+[07/09 11:51:31][INFO] logging.py:  99: json_stats: {"cur_iter": "802", "eta": "0:00:55", "split": "test_iter", "time_diff": 0.64651}
+[07/09 11:51:32][INFO] logging.py:  99: json_stats: {"cur_iter": "803", "eta": "0:00:54", "split": "test_iter", "time_diff": 0.64128}
+[07/09 11:51:33][INFO] logging.py:  99: json_stats: {"cur_iter": "804", "eta": "0:00:57", "split": "test_iter", "time_diff": 0.68401}
+[07/09 11:51:34][INFO] logging.py:  99: json_stats: {"cur_iter": "805", "eta": "0:00:54", "split": "test_iter", "time_diff": 0.65575}
+[07/09 11:51:34][INFO] logging.py:  99: json_stats: {"cur_iter": "806", "eta": "0:00:52", "split": "test_iter", "time_diff": 0.64107}
+[07/09 11:51:35][INFO] logging.py:  99: json_stats: {"cur_iter": "807", "eta": "0:00:52", "split": "test_iter", "time_diff": 0.64399}
+[07/09 11:51:36][INFO] logging.py:  99: json_stats: {"cur_iter": "808", "eta": "0:00:51", "split": "test_iter", "time_diff": 0.64078}
+[07/09 11:51:36][INFO] logging.py:  99: json_stats: {"cur_iter": "809", "eta": "0:00:51", "split": "test_iter", "time_diff": 0.65082}
+[07/09 11:51:37][INFO] logging.py:  99: json_stats: {"cur_iter": "810", "eta": "0:00:52", "split": "test_iter", "time_diff": 0.67066}
+[07/09 11:51:38][INFO] logging.py:  99: json_stats: {"cur_iter": "811", "eta": "0:00:49", "split": "test_iter", "time_diff": 0.64343}
+[07/09 11:51:39][INFO] logging.py:  99: json_stats: {"cur_iter": "812", "eta": "0:00:50", "split": "test_iter", "time_diff": 0.67049}
+[07/09 11:51:39][INFO] logging.py:  99: json_stats: {"cur_iter": "813", "eta": "0:00:51", "split": "test_iter", "time_diff": 0.69111}
+[07/09 11:51:40][INFO] logging.py:  99: json_stats: {"cur_iter": "814", "eta": "0:00:47", "split": "test_iter", "time_diff": 0.64439}
+[07/09 11:51:41][INFO] logging.py:  99: json_stats: {"cur_iter": "815", "eta": "0:00:47", "split": "test_iter", "time_diff": 0.65211}
+[07/09 11:51:41][INFO] logging.py:  99: json_stats: {"cur_iter": "816", "eta": "0:00:46", "split": "test_iter", "time_diff": 0.64132}
+[07/09 11:51:42][INFO] logging.py:  99: json_stats: {"cur_iter": "817", "eta": "0:00:45", "split": "test_iter", "time_diff": 0.64342}
+[07/09 11:51:43][INFO] logging.py:  99: json_stats: {"cur_iter": "818", "eta": "0:00:44", "split": "test_iter", "time_diff": 0.64135}
+[07/09 11:51:44][INFO] logging.py:  99: json_stats: {"cur_iter": "819", "eta": "0:00:44", "split": "test_iter", "time_diff": 0.64086}
+[07/09 11:51:44][INFO] logging.py:  99: json_stats: {"cur_iter": "820", "eta": "0:00:43", "split": "test_iter", "time_diff": 0.64156}
+[07/09 11:51:45][INFO] logging.py:  99: json_stats: {"cur_iter": "821", "eta": "0:00:43", "split": "test_iter", "time_diff": 0.64585}
+[07/09 11:51:46][INFO] logging.py:  99: json_stats: {"cur_iter": "822", "eta": "0:00:42", "split": "test_iter", "time_diff": 0.65110}
+[07/09 11:51:46][INFO] logging.py:  99: json_stats: {"cur_iter": "823", "eta": "0:00:41", "split": "test_iter", "time_diff": 0.64122}
+[07/09 11:51:47][INFO] logging.py:  99: json_stats: {"cur_iter": "824", "eta": "0:00:41", "split": "test_iter", "time_diff": 0.64109}
+[07/09 11:51:48][INFO] logging.py:  99: json_stats: {"cur_iter": "825", "eta": "0:00:40", "split": "test_iter", "time_diff": 0.64535}
+[07/09 11:51:49][INFO] logging.py:  99: json_stats: {"cur_iter": "826", "eta": "0:00:40", "split": "test_iter", "time_diff": 0.64638}
+[07/09 11:51:49][INFO] logging.py:  99: json_stats: {"cur_iter": "827", "eta": "0:00:39", "split": "test_iter", "time_diff": 0.64160}
+[07/09 11:51:50][INFO] logging.py:  99: json_stats: {"cur_iter": "828", "eta": "0:00:38", "split": "test_iter", "time_diff": 0.64108}
+[07/09 11:51:51][INFO] logging.py:  99: json_stats: {"cur_iter": "829", "eta": "0:00:37", "split": "test_iter", "time_diff": 0.64315}
+[07/09 11:51:51][INFO] logging.py:  99: json_stats: {"cur_iter": "830", "eta": "0:00:37", "split": "test_iter", "time_diff": 0.63942}
+[07/09 11:51:52][INFO] logging.py:  99: json_stats: {"cur_iter": "831", "eta": "0:00:36", "split": "test_iter", "time_diff": 0.64291}
+[07/09 11:51:53][INFO] logging.py:  99: json_stats: {"cur_iter": "832", "eta": "0:00:38", "split": "test_iter", "time_diff": 0.68373}
+[07/09 11:51:53][INFO] logging.py:  99: json_stats: {"cur_iter": "833", "eta": "0:00:36", "split": "test_iter", "time_diff": 0.65939}
+[07/09 11:51:54][INFO] logging.py:  99: json_stats: {"cur_iter": "834", "eta": "0:00:34", "split": "test_iter", "time_diff": 0.64096}
+[07/09 11:51:55][INFO] logging.py:  99: json_stats: {"cur_iter": "835", "eta": "0:00:33", "split": "test_iter", "time_diff": 0.64135}
+[07/09 11:51:56][INFO] logging.py:  99: json_stats: {"cur_iter": "836", "eta": "0:00:33", "split": "test_iter", "time_diff": 0.64154}
+[07/09 11:51:56][INFO] logging.py:  99: json_stats: {"cur_iter": "837", "eta": "0:00:32", "split": "test_iter", "time_diff": 0.64583}
+[07/09 11:51:57][INFO] logging.py:  99: json_stats: {"cur_iter": "838", "eta": "0:00:32", "split": "test_iter", "time_diff": 0.64090}
+[07/09 11:51:58][INFO] logging.py:  99: json_stats: {"cur_iter": "839", "eta": "0:00:31", "split": "test_iter", "time_diff": 0.64398}
+[07/09 11:51:58][INFO] logging.py:  99: json_stats: {"cur_iter": "840", "eta": "0:00:30", "split": "test_iter", "time_diff": 0.64079}
+[07/09 11:51:59][INFO] logging.py:  99: json_stats: {"cur_iter": "841", "eta": "0:00:30", "split": "test_iter", "time_diff": 0.64769}
+[07/09 11:52:00][INFO] logging.py:  99: json_stats: {"cur_iter": "842", "eta": "0:00:29", "split": "test_iter", "time_diff": 0.64103}
+[07/09 11:52:01][INFO] logging.py:  99: json_stats: {"cur_iter": "843", "eta": "0:00:28", "split": "test_iter", "time_diff": 0.64026}
+[07/09 11:52:01][INFO] logging.py:  99: json_stats: {"cur_iter": "844", "eta": "0:00:28", "split": "test_iter", "time_diff": 0.64007}
+[07/09 11:52:02][INFO] logging.py:  99: json_stats: {"cur_iter": "845", "eta": "0:00:27", "split": "test_iter", "time_diff": 0.64023}
+[07/09 11:52:03][INFO] logging.py:  99: json_stats: {"cur_iter": "846", "eta": "0:00:26", "split": "test_iter", "time_diff": 0.64230}
+[07/09 11:52:03][INFO] logging.py:  99: json_stats: {"cur_iter": "847", "eta": "0:00:26", "split": "test_iter", "time_diff": 0.64812}
+[07/09 11:52:04][INFO] logging.py:  99: json_stats: {"cur_iter": "848", "eta": "0:00:27", "split": "test_iter", "time_diff": 0.68595}
+[07/09 11:52:05][INFO] logging.py:  99: json_stats: {"cur_iter": "849", "eta": "0:00:27", "split": "test_iter", "time_diff": 0.69292}
+[07/09 11:52:05][INFO] logging.py:  99: json_stats: {"cur_iter": "850", "eta": "0:00:24", "split": "test_iter", "time_diff": 0.65132}
+[07/09 11:52:06][INFO] logging.py:  99: json_stats: {"cur_iter": "851", "eta": "0:00:23", "split": "test_iter", "time_diff": 0.64834}
+[07/09 11:52:07][INFO] logging.py:  99: json_stats: {"cur_iter": "852", "eta": "0:00:23", "split": "test_iter", "time_diff": 0.64789}
+[07/09 11:52:08][INFO] logging.py:  99: json_stats: {"cur_iter": "853", "eta": "0:00:22", "split": "test_iter", "time_diff": 0.65175}
+[07/09 11:52:08][INFO] logging.py:  99: json_stats: {"cur_iter": "854", "eta": "0:00:22", "split": "test_iter", "time_diff": 0.64799}
+[07/09 11:52:09][INFO] logging.py:  99: json_stats: {"cur_iter": "855", "eta": "0:00:21", "split": "test_iter", "time_diff": 0.64084}
+[07/09 11:52:10][INFO] logging.py:  99: json_stats: {"cur_iter": "856", "eta": "0:00:20", "split": "test_iter", "time_diff": 0.64138}
+[07/09 11:52:10][INFO] logging.py:  99: json_stats: {"cur_iter": "857", "eta": "0:00:20", "split": "test_iter", "time_diff": 0.65004}
+[07/09 11:52:11][INFO] logging.py:  99: json_stats: {"cur_iter": "858", "eta": "0:00:19", "split": "test_iter", "time_diff": 0.63992}
+[07/09 11:52:12][INFO] logging.py:  99: json_stats: {"cur_iter": "859", "eta": "0:00:18", "split": "test_iter", "time_diff": 0.64070}
+[07/09 11:52:13][INFO] logging.py:  99: json_stats: {"cur_iter": "860", "eta": "0:00:19", "split": "test_iter", "time_diff": 0.70574}
+[07/09 11:52:13][INFO] logging.py:  99: json_stats: {"cur_iter": "861", "eta": "0:00:17", "split": "test_iter", "time_diff": 0.65075}
+[07/09 11:52:14][INFO] logging.py:  99: json_stats: {"cur_iter": "862", "eta": "0:00:16", "split": "test_iter", "time_diff": 0.64740}
+[07/09 11:52:15][INFO] logging.py:  99: json_stats: {"cur_iter": "863", "eta": "0:00:16", "split": "test_iter", "time_diff": 0.64840}
+[07/09 11:52:15][INFO] logging.py:  99: json_stats: {"cur_iter": "864", "eta": "0:00:15", "split": "test_iter", "time_diff": 0.64066}
+[07/09 11:52:16][INFO] logging.py:  99: json_stats: {"cur_iter": "865", "eta": "0:00:14", "split": "test_iter", "time_diff": 0.64246}
+[07/09 11:52:17][INFO] logging.py:  99: json_stats: {"cur_iter": "866", "eta": "0:00:14", "split": "test_iter", "time_diff": 0.64007}
+[07/09 11:52:18][INFO] logging.py:  99: json_stats: {"cur_iter": "867", "eta": "0:00:13", "split": "test_iter", "time_diff": 0.64037}
+[07/09 11:52:18][INFO] logging.py:  99: json_stats: {"cur_iter": "868", "eta": "0:00:12", "split": "test_iter", "time_diff": 0.64171}
+[07/09 11:52:19][INFO] logging.py:  99: json_stats: {"cur_iter": "869", "eta": "0:00:13", "split": "test_iter", "time_diff": 0.69294}
+[07/09 11:52:20][INFO] logging.py:  99: json_stats: {"cur_iter": "870", "eta": "0:00:11", "split": "test_iter", "time_diff": 0.64103}
+[07/09 11:52:20][INFO] logging.py:  99: json_stats: {"cur_iter": "871", "eta": "0:00:11", "split": "test_iter", "time_diff": 0.66027}
+[07/09 11:52:21][INFO] logging.py:  99: json_stats: {"cur_iter": "872", "eta": "0:00:10", "split": "test_iter", "time_diff": 0.65079}
+[07/09 11:52:22][INFO] logging.py:  99: json_stats: {"cur_iter": "873", "eta": "0:00:09", "split": "test_iter", "time_diff": 0.64496}
+[07/09 11:52:23][INFO] logging.py:  99: json_stats: {"cur_iter": "874", "eta": "0:00:09", "split": "test_iter", "time_diff": 0.65954}
+[07/09 11:52:23][INFO] logging.py:  99: json_stats: {"cur_iter": "875", "eta": "0:00:08", "split": "test_iter", "time_diff": 0.63912}
+[07/09 11:52:24][INFO] logging.py:  99: json_stats: {"cur_iter": "876", "eta": "0:00:07", "split": "test_iter", "time_diff": 0.64054}
+[07/09 11:52:25][INFO] logging.py:  99: json_stats: {"cur_iter": "877", "eta": "0:00:07", "split": "test_iter", "time_diff": 0.64059}
+[07/09 11:52:25][INFO] logging.py:  99: json_stats: {"cur_iter": "878", "eta": "0:00:06", "split": "test_iter", "time_diff": 0.64254}
+[07/09 11:52:26][INFO] logging.py:  99: json_stats: {"cur_iter": "879", "eta": "0:00:05", "split": "test_iter", "time_diff": 0.64464}
+[07/09 11:52:26][INFO] logging.py:  99: json_stats: {"cur_iter": "880", "eta": "0:00:05", "split": "test_iter", "time_diff": 0.64092}
+[07/09 11:52:27][INFO] logging.py:  99: json_stats: {"cur_iter": "881", "eta": "0:00:04", "split": "test_iter", "time_diff": 0.64049}
+[07/09 11:52:28][INFO] logging.py:  99: json_stats: {"cur_iter": "882", "eta": "0:00:03", "split": "test_iter", "time_diff": 0.64292}
+[07/09 11:52:28][INFO] logging.py:  99: json_stats: {"cur_iter": "883", "eta": "0:00:03", "split": "test_iter", "time_diff": 0.64420}
+[07/09 11:52:29][INFO] logging.py:  99: json_stats: {"cur_iter": "884", "eta": "0:00:02", "split": "test_iter", "time_diff": 0.64166}
+[07/09 11:52:30][INFO] logging.py:  99: json_stats: {"cur_iter": "885", "eta": "0:00:01", "split": "test_iter", "time_diff": 0.64044}
+[07/09 11:52:30][INFO] logging.py:  99: json_stats: {"cur_iter": "886", "eta": "0:00:01", "split": "test_iter", "time_diff": 0.64178}
+[07/09 11:52:31][INFO] logging.py:  99: json_stats: {"cur_iter": "887", "eta": "0:00:00", "split": "test_iter", "time_diff": 0.42550}
+clip count 365: 16 ~= num clips 15
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+[07/09 11:52:31][WARNING] meters.py: 373: clip count 365: 16 ~= num clips 15
+[07/09 11:52:31][INFO] logging.py:  99: json_stats: {"split": "test_final", "top1_acc": "84.03", "top5_acc": "95.59"}
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_functional_video.py:5: UserWarning: The _functional_video module is deprecated. Please use the functional module instead.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/_transforms_video.py:25: UserWarning: The _transforms_video module is deprecated. Please use the transforms module instead.
+  warnings.warn(

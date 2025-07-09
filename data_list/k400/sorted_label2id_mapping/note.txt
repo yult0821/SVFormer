@@ -1,0 +1,2 @@
+output_xxx_v0.csv is generated before excluding broken videos in corresponding folders (test/validate). (train folder is processed earlier)
+output_xxx.csv is generated after excluding broken videos in corresponding folders (test/validate). (train folder is processed earlier)
