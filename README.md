@@ -6,12 +6,14 @@ This repo is an SNN extension of [UniFormer](https://github.com/Sense-X/UniForme
 ### Installation
 
 First of all, you need to install slowfast. Please follow the installation instructions in [INSTALL.md](INSTALL.md). 
+
 Then, you need to install `spikingjelly==0.0.0.0.14` for SNN development and training.
+
 Besides, you may follow the instructions in [DATASET.md](DATASET.md) to prepare the datasets.
 
 ### Pretrained models
 
-We release the checkpoints on **Baidu Cloud**: [ckpt (bv4p)](ttps://pan.baidu.com/s/1Inrw3lXmGShLMhgy0YeEnA)
+We release the checkpoints on Baidu Cloud: [ckpt (bv4p)](https://pan.baidu.com/s/1Inrw3lXmGShLMhgy0YeEnA)
 
 Download them and place them in the corresponding [checkpoints](./exp/svformer_ucf101_scratch/checkpoints/) folder.
 
@@ -53,7 +55,7 @@ Specifically, we need to create our new config for testing and run multi-crop/mu
 
 3. Set the number of crops and clips (in `test.yaml` or `test.sh`):
 
-   **Multi-clip testing** (the numbers can be modified)
+   Multi-clip testing (the numbers can be modified)
 
    ```shell
    TEST.NUM_ENSEMBLE_VIEWS 5
@@ -69,7 +71,7 @@ Specifically, we need to create our new config for testing and run multi-crop/mu
 ### Define and train your own SNN model
 
 1. Define your SNN model like `./slowfast/models/uniformer2d_psnn_try.py`, and others in the same folder.
-2. Make some modifications in `./slowfast/models/__init__.py`, `./slowfast/models/build.py`, `./slowfast/config/defaults.py`, `./tools/train_net.py`, etc. 
+2. Make some modifications in `./slowfast/models/__init__.py`, `./slowfast/models/build.py`, `./slowfast/config/defaults.py`, `./tools/train_net.py`, etc. (see examples in the corresponding files for existed snn model)
 3. Train and test the model by following the above instructions.
 
 **[Note]:**
